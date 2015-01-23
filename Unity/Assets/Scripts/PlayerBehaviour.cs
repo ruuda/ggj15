@@ -28,19 +28,41 @@ public class PlayerBehaviour : MonoBehaviour {
 		var right = transform.TransformDirection(Vector3.right);
 		var forward = transform.forward;
 		
-		var canLeft = !Physics.Raycast(waistPosition, left, 0.6f);
-		var canRight = !Physics.Raycast(waistPosition, right, 0.6f);
-		var canForward = !Physics.Raycast(waistPosition, forward, 0.6f);
+		var canLeft = !Physics.Raycast(waistPosition, left, 1.4f);
+		var canRight = !Physics.Raycast(waistPosition, right, 1.4f);
+		var canForward = !Physics.Raycast(waistPosition, forward, 1.4f);
 		
-		Debug.DrawRay(waistPosition, left, Color.red, 0f);
-		Debug.DrawRay(waistPosition, right, Color.blue, 0f);
-		Debug.DrawRay(waistPosition, forward, Color.cyan, 0f);
+		Debug.DrawRay(waistPosition, left * 1.4f, Color.red, 0f);
+		Debug.DrawRay(waistPosition, right * 1.4f, Color.blue, 0f);
+		Debug.DrawRay(waistPosition, forward * 1.4f, Color.cyan, 0f);
 
-		Debug.Log (canForward.ToString());
-
-		if (canForward && Input.GetKey(KeyCode.W))
+		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
 		{
 			var move = new Movement { kind = MovementKind.Move, fromPos = this.transform.position, toPos = this.transform.position + forward };
+			this.movements.Enqueue(move);
+		}
+
+		if (canLeft && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
+		{
+			var rotate = new Movement {
+				kind = MovementKind.Rotate,
+				fromRot = this.transform.rotation,
+				toRot = Quaternion.AngleAxis(-90.0f, Vector3.up) * this.transform.rotation
+			};
+			var move = new Movement { kind = MovementKind.Move, fromPos = this.transform.position, toPos = this.transform.position + left };
+			this.movements.Enqueue(rotate);
+			this.movements.Enqueue(move);
+		}
+
+		if (canRight && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
+		{
+			var rotate = new Movement {
+				kind = MovementKind.Rotate,
+				fromRot = this.transform.rotation,
+				toRot = Quaternion.AngleAxis(90.0f, Vector3.up) * this.transform.rotation
+			};
+			var move = new Movement { kind = MovementKind.Move, fromPos = this.transform.position, toPos = this.transform.position + right };
+			this.movements.Enqueue(rotate);
 			this.movements.Enqueue(move);
 		}
 	}
@@ -65,6 +87,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (movement.kind == MovementKind.Move)
 		{
 			this.transform.position = movement.fromPos * (1.0f - t) + movement.toPos * t;
+		}
+
+		if (movement.kind == MovementKind.Rotate)
+		{
+			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, t);
 		}
 	}
 }
