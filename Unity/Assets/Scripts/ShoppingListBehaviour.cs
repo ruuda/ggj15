@@ -7,18 +7,22 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public int listLength = 5;
 
 	private List<Collectable> collectables = new List<Collectable>();
+	private ShoppingListUI shoppingListUI;
 
 	void Awake () {
+		// Get a random subset of the available items of the desired length.
 		var available = ((Collectable[])System.Enum.GetValues(typeof(Collectable))).ToList ();
 		available.Shuffle();
 		for (int i = 0; i < listLength; i++) {
 			collectables.Add(available[i]);
 		}
+
+		shoppingListUI = GameObject.FindGameObjectWithTag("ShoppingListText").GetComponent<ShoppingListUI>();
 	}
 
 	// Use this for initialization
 	void Start () {
-	
+		shoppingListUI.SetList(this.collectables);
 	}
 	
 	// Update is called once per frame
@@ -30,6 +34,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 		if (this.collectables.Remove(collectable)) {
 			Debug.Log(string.Format ("{0} collected", collectable));
 			// TODO: Special effects, whatnot.
+			shoppingListUI.SetList(this.collectables);
 		} else {
 			Debug.Log(string.Format("{0} not collected, not on list", collectable));
 		}
