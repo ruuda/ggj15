@@ -5,15 +5,13 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	public float moveTime = 0.4f;
 	public float turnTime = 0.1f;
-
+	
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
-
 	private Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
 
-
 	void Start () {
-	
+
 	}
 
 	void Update () {

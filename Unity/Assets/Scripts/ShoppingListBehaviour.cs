@@ -6,13 +6,13 @@ public class ShoppingListBehaviour : MonoBehaviour {
 
 	public int listLength = 5;
 
-	private Queue<Collectable> collectables = new Queue<Collectable>();
+	private List<Collectable> collectables = new List<Collectable>();
 
 	void Awake () {
 		var available = ((Collectable[])System.Enum.GetValues(typeof(Collectable))).ToList ();
 		available.Shuffle();
 		for (int i = 0; i < listLength; i++) {
-			collectables.Enqueue(available[i]);
+			collectables.Add(available[i]);
 		}
 	}
 
@@ -24,6 +24,15 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void Collect(Collectable collectable) {
+		if (this.collectables.Remove(collectable)) {
+			Debug.Log(string.Format ("{0} collected", collectable));
+			// TODO: Special effects, whatnot.
+		} else {
+			Debug.Log(string.Format("{0} not collected, not on list", collectable));
+		}
 	}
 }
 
