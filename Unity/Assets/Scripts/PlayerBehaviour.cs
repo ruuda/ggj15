@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public float moveSpeed = 5.0f;
+	public float moveTime = 0.4f;
+	public float turnTime = 0.1f;
 
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
@@ -23,6 +24,24 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
+	private Movement MakeMovement (Vector3 offset) {
+		return new Movement {
+			kind = MovementKind.Move,
+			duration = moveTime,
+			fromPos = this.transform.position,
+			toPos = this.transform.position + offset
+		};
+	}
+
+	private Movement MakeRotation (float angle) {
+		return new Movement {
+			kind = MovementKind.Rotate,
+			duration = turnTime,
+			fromRot = this.transform.rotation,
+			toRot = Quaternion.AngleAxis(angle, Vector3.up) * this.transform.rotation
+		};
+	}
+
 	private void HandleInput () {
 		var left = transform.TransformDirection(Vector3.left);
 		var right = transform.TransformDirection(Vector3.right);
@@ -38,40 +57,27 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
 		{
-			var move = new Movement { kind = MovementKind.Move, fromPos = this.transform.position, toPos = this.transform.position + forward };
-			this.movements.Enqueue(move);
+			this.movements.Enqueue(MakeMovement(forward));
 		}
 
 		if (canLeft && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
 		{
-			var rotate = new Movement {
-				kind = MovementKind.Rotate,
-				fromRot = this.transform.rotation,
-				toRot = Quaternion.AngleAxis(-90.0f, Vector3.up) * this.transform.rotation
-			};
-			var move = new Movement { kind = MovementKind.Move, fromPos = this.transform.position, toPos = this.transform.position + left };
-			this.movements.Enqueue(rotate);
-			this.movements.Enqueue(move);
+			this.movements.Enqueue(MakeRotation(-90.0f));
+			this.movements.Enqueue(MakeMovement(left));
 		}
 
 		if (canRight && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
 		{
-			var rotate = new Movement {
-				kind = MovementKind.Rotate,
-				fromRot = this.transform.rotation,
-				toRot = Quaternion.AngleAxis(90.0f, Vector3.up) * this.transform.rotation
-			};
-			var move = new Movement { kind = MovementKind.Move, fromPos = this.transform.position, toPos = this.transform.position + right };
-			this.movements.Enqueue(rotate);
-			this.movements.Enqueue(move);
+			this.movements.Enqueue(MakeRotation(90.0f));
+			this.movements.Enqueue(MakeMovement(right));
 		}
 	}
 
 	private void HandleMove () {
 
 		var movement = this.movements.Peek();
-		this.movementT += Time.deltaTime;
-		var t = this.movementT;
+		this.movementT += Time.deltaTime ;
+		var t = this.movementT / movement.duration;
 
 		// This one is done now.
 		if (t > 1.0f)
@@ -103,6 +109,7 @@ internal enum MovementKind {
 
 internal struct Movement {
 	public MovementKind kind;
+	public float duration;
 	public Vector3 fromPos;
 	public Vector3 toPos;
 	public Quaternion fromRot;
