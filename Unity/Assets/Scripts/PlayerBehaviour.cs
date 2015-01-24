@@ -6,10 +6,10 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float moveTimeRegular = 0.3f;
 	public float moveTimeCrying = 0.6f;
 	public float turnTime = 0.1f;
+	public Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
 	
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
-	private Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
 	private ChildBehaviour child;
 
 	void Awake () {
