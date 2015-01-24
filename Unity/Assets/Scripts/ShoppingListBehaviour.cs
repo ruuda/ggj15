@@ -11,6 +11,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public float listUIWidth = 0.25f;
 	public ParticleController particleController;
 	public GameObject pointerPrefab;
+	public ExitGateBehaviour exitGate;
 
 	public Sprite listTopSprite;
 	public Sprite bananasSprite;
@@ -118,6 +119,11 @@ public class ShoppingListBehaviour : MonoBehaviour {
 
 			// Spawn particles for visual feedback.
 			this.particleController.Burst(at);
+
+			// If this was the last one, the gate may be opened.
+			if (this.collectables.Count == 0) {
+				exitGate.SetDone(true);
+			}
 		} else {
 			Debug.Log(string.Format("{0} not collected, not on list", collectable));
 		}

@@ -180,7 +180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485332, guid: 677a71b9abf3fa4409800678f4c7cd25, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 677a71b9abf3fa4409800678f4c7cd25, type: 2}
@@ -822,7 +822,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335292345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: -.200000003}
+  m_LocalPosition: {x: 8, y: 0, z: -.400000006}
   m_LocalScale: {x: 1, y: 1, z: .200000003}
   m_Children: []
   m_Father: {fileID: 1036209206}
@@ -1049,8 +1049,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440290, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11440268, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
+      propertyPath: exitGate
+      value: 
+      objectReference: {fileID: 818984307}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
   m_RootGameObject: {fileID: 2092495177}
@@ -1157,6 +1161,14 @@ Prefab:
       propertyPath: particleController
       value: 
       objectReference: {fileID: 1759205161}
+    - target: {fileID: 11418964, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
+      propertyPath: exitGate
+      value: 
+      objectReference: {fileID: 818984307}
+    - target: {fileID: 11418964, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
+      propertyPath: listLength
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
   m_RootGameObject: {fileID: 2072157163}
@@ -1627,6 +1639,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1036209206}
   m_RootOrder: 22
+--- !u!1 &818984305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 818984306}
+  - 33: {fileID: 818984309}
+  - 65: {fileID: 818984308}
+  - 114: {fileID: 818984307}
+  m_Layer: 0
+  m_Name: ExitGate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818984306
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818984305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5, y: .5, z: -3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+--- !u!114 &818984307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818984305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980de9d7d7df47d44b47dd7d1a3f1816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &818984308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818984305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &818984309
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818984305}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &819900294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,12 +5912,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b97bb6bb6c225148bab28a39bd4ec69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listLength: 5
+  listLength: 1
   listUIX: .699999988
   listUIY: .300000012
   listUIWidth: .25
   particleController: {fileID: 1759205161}
   pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
+  exitGate: {fileID: 818984307}
   listTopSprite: {fileID: 21300000, guid: 8294d3c8a851f7044b9b1813f07f9b6e, type: 3}
   bananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
   bananasCheckSprite: {fileID: 21300000, guid: fbf53e4eee4e82c42ae9a85a0e722679, type: 3}
@@ -5970,6 +6043,7 @@ MonoBehaviour:
   runAwayAt: 0
   moveTime: .400000006
   turnTime: .150000006
+  exitGate: {fileID: 818984307}
 --- !u!136 &2092495181
 CapsuleCollider:
   m_ObjectHideFlags: 0

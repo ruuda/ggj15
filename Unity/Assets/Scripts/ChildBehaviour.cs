@@ -9,6 +9,7 @@ public class ChildBehaviour : MonoBehaviour {
 	public int runAwayAt = 0;
 	public float moveTime = 0.4f;
 	public float turnTime = 0.15f;
+	public ExitGateBehaviour exitGate;
 
 	private bool isFollowing = true;
 	public bool isCrying { get; private set; }
@@ -137,10 +138,11 @@ public class ChildBehaviour : MonoBehaviour {
 		// If the parent does find the child again after it ran away, the child will follow again,
 		// but it will be crying.
 		if (!isFollowing && other.gameObject.tag == "Player") {
-			Debug.Log("Child and parent have been reunited.");
 			isFollowing = true;
 			isCrying = true;
 			comfort = cryAt; // TODO: Could add some randomness?
+
+			OnJoining();
 		}
 	}
 
@@ -154,8 +156,8 @@ public class ChildBehaviour : MonoBehaviour {
 			if (comfort <= runAwayAt) {
 				isFollowing = false;
 				isCrying = false;
-				Debug.Log("Child ran away!");
-				// TODO: effects and the like, feedback
+
+				OnLeaving();
 
 				// Turn around, run away from the parent!
 				this.movements.Enqueue(MakeRotation(180.0f));
@@ -182,5 +184,18 @@ public class ChildBehaviour : MonoBehaviour {
 			// Maybe with a certain probability?
 			// TODO
 		}
+	}
+
+	private void OnLeaving () {
+		Debug.Log("Child ran away!");
+		// TODO: effects and the like, feedback
+
+		exitGate.SetFollowing(false);
+	}
+
+	private void OnJoining () {
+		Debug.Log("Child and parent have been reunited.");
+
+		exitGate.SetFollowing(true);
 	}
 }
