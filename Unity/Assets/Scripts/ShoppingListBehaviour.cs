@@ -9,6 +9,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public float listUIX = 0.7f;
 	public float listUIY = 0.4f;
 	public float listUIWidth = 0.25f;
+	public ParticleController particleController;
 
 	public Sprite listTopSprite;
 	public Sprite bananasSprite;
@@ -85,7 +86,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	
 	}
 
-	public void Collect(Collectable collectable) {
+	public void Collect(Collectable collectable, Vector3 at) {
 		var index = this.collectables.IndexOf(collectable);
 		if (this.collectables.Remove(collectable)) {
 			Debug.Log(string.Format ("{0} collected", collectable));
@@ -93,6 +94,9 @@ public class ShoppingListBehaviour : MonoBehaviour {
 
 			// The index in the ui Image list is +1 because of the list top.
 			uiImages[index + 1].color = Color.black; // TODO: swap image? overlay?
+
+			// Spawn particles for visual feedback.
+			this.particleController.Burst(at);
 		} else {
 			Debug.Log(string.Format("{0} not collected, not on list", collectable));
 		}
