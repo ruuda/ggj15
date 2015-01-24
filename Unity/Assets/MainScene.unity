@@ -516,8 +516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothingSpeed: 5
-  distance: 10
-  angle: 45
+  distance: 5
+  angle: 12
 --- !u!1 &276759609
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,8 +4066,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1866039880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: .5, z: 3.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.5, y: .398999989, z: 3.5}
+  m_LocalScale: {x: .400000006, y: .800000012, z: .400000006}
   m_Children:
   - {fileID: 1701443492}
   m_Father: {fileID: 0}
