@@ -604,15 +604,22 @@ MonoBehaviour:
   listUIX: .699999988
   listUIY: .300000012
   listUIWidth: .25
+  particleController: {fileID: 0}
   listTopSprite: {fileID: 21300000, guid: 8294d3c8a851f7044b9b1813f07f9b6e, type: 3}
   bananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
-  strawberriesStprite: {fileID: 21300000, guid: 153198e8d0c49c54782eabe190fc63f1,
-    type: 3}
+  bananasCheckSprite: {fileID: 0}
+  strawberriesSprite: {fileID: 21300000, guid: 153198e8d0c49c54782eabe190fc63f1, type: 3}
+  strawberriesCheckSprite: {fileID: 0}
   crispsSprite: {fileID: 21300000, guid: 8ac624192d835054a87d4453012067dd, type: 3}
+  crispsCheckSprite: {fileID: 0}
   milkSprite: {fileID: 21300000, guid: 4d344d69f29b02e43bd4dec704248b95, type: 3}
+  milkCheckSprite: {fileID: 0}
   potatoesSprite: {fileID: 21300000, guid: e1b099b63b04f994fb976306ff01ea50, type: 3}
+  potatoesCheckSprite: {fileID: 0}
   kiwisSprite: {fileID: 21300000, guid: f0c141b995b9b0443b267a7ce7429dcc, type: 3}
+  kiwisCheckSprite: {fileID: 0}
   lemonsSprite: {fileID: 21300000, guid: 48518138d3cca88498c408e374d5f63f, type: 3}
+  lemonsCheckSprite: {fileID: 0}
   listBottomSprite: {fileID: 21300000, guid: 2f52081bb6aaca24593722bf8931ad29, type: 3}
 --- !u!136 &13618964
 CapsuleCollider:

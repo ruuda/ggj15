@@ -13,12 +13,19 @@ public class ShoppingListBehaviour : MonoBehaviour {
 
 	public Sprite listTopSprite;
 	public Sprite bananasSprite;
-	public Sprite strawberriesStprite;
+	public Sprite bananasCheckSprite;
+	public Sprite strawberriesSprite;
+	public Sprite strawberriesCheckSprite;
 	public Sprite crispsSprite;
+	public Sprite crispsCheckSprite;
 	public Sprite milkSprite;
+	public Sprite milkCheckSprite;
 	public Sprite potatoesSprite;
+	public Sprite potatoesCheckSprite;
 	public Sprite kiwisSprite;
+	public Sprite kiwisCheckSprite;
 	public Sprite lemonsSprite;
+	public Sprite lemonsCheckSprite;
 	public Sprite listBottomSprite;
 
 	private List<Collectable> collectables = new List<Collectable>();
@@ -38,12 +45,25 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	private Sprite CollectableToSprite (Collectable collectable) {
 		switch (collectable) {
 		case Collectable.Bananas: return bananasSprite;
-		case Collectable.Strawberries: return strawberriesStprite;
+		case Collectable.Strawberries: return strawberriesSprite;
 		case Collectable.Crisps: return crispsSprite;
 		case Collectable.Kiwis: return kiwisSprite;
 		case Collectable.Lemons: return lemonsSprite;
 		case Collectable.Milk: return milkSprite;
 		case Collectable.Potatoes: return potatoesSprite;
+		}
+		throw new System.ArgumentException("collectable");
+	}
+
+	private Sprite CollectableToCheckSprite (Collectable collectable) {
+		switch (collectable) {
+		case Collectable.Bananas: return bananasCheckSprite;
+		case Collectable.Strawberries: return strawberriesCheckSprite;
+		case Collectable.Crisps: return crispsCheckSprite;
+		case Collectable.Kiwis: return kiwisCheckSprite;
+		case Collectable.Lemons: return lemonsCheckSprite;
+		case Collectable.Milk: return milkCheckSprite;
+		case Collectable.Potatoes: return potatoesCheckSprite;
 		}
 		throw new System.ArgumentException("collectable");
 	}

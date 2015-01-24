@@ -7,10 +7,13 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float moveTimeCrying = 0.6f;
 	public float turnTime = 0.1f;
 	public Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
+	public Vector3 torsoPosition { get { return this.transform.position + new Vector3(0f, 1.0f, 0f); } }
 	
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
 	private ChildBehaviour child;
+
+	public float movementTime { get { return movementT; } }
 
 	void Awake () {
 		child = GameObject.FindGameObjectWithTag("Child").GetComponent<ChildBehaviour>();
@@ -144,12 +147,12 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 }
 
-internal enum MovementKind {
+public enum MovementKind {
 	Rotate,
 	Move
 }
 
-internal struct Movement {
+public struct Movement {
 	public MovementKind kind;
 	public float duration;
 	public Vector3 fromPos;
