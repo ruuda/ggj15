@@ -59,18 +59,21 @@ public class PlayerBehaviour : MonoBehaviour {
 		Debug.DrawRay(waistPosition, right * 1.4f, Color.blue, 0f);
 		Debug.DrawRay(waistPosition, forward * 1.4f, Color.cyan, 0f);
 
-		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
-			this.movements.Enqueue(MakeMovement(forward));
-		}
-
 		if (canLeft && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
 			this.movements.Enqueue(MakeRotation(-90.0f));
 			this.movements.Enqueue(MakeMovement(left));
+			return;
 		}
 
 		if (canRight && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
 			this.movements.Enqueue(MakeRotation(90.0f));
 			this.movements.Enqueue(MakeMovement(right));
+			return;
+		}
+
+		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
+			this.movements.Enqueue(MakeMovement(forward));
+			return;
 		}
 	}
 
