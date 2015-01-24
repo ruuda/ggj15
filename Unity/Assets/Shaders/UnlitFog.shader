@@ -7,10 +7,12 @@
 		fogHeight ("Fog Height", Float) = 1.0
 	}
 	SubShader {
+		Tags { "Queue" = "Transparent" }
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		
-		Pass {		
+		Pass {
+		Blend SrcAlpha OneMinusSrcAlpha	
 			CGPROGRAM
 			#pragma target 3.0
 			#pragma vertex vert
@@ -58,6 +60,7 @@
 				const float4 channels = tex2D(base, i.uv.xy);
 				const float4 f = mix(fogColourLow, fogColourHigh, 1.0 - exp(-i.wpos.y / fogHeight));
 				const float4 withFog = mix(channels, f, (1.0 - exp(-i.depth)) * f.a);
+				if (channels.a < 0.8) discard;
 				return float4(withFog.rgb, 1.0f);
 			}
 			

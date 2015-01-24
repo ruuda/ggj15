@@ -8,6 +8,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float turnTime = 0.1f;
 	public Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
 	public Vector3 torsoPosition { get { return this.transform.position + new Vector3(0f, 1.0f, 0f); } }
+	public bool isAlive { get; set; }
 	
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
@@ -17,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Awake () {
 		child = GameObject.FindGameObjectWithTag("Child").GetComponent<ChildBehaviour>();
+		isAlive = true;
 	}
 
 	void Start () {
@@ -50,6 +52,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	private void HandleInput () {
+		if (!isAlive) return;
+
 		var left = transform.TransformDirection(Vector3.left);
 		var right = transform.TransformDirection(Vector3.right);
 		var forward = transform.forward;
