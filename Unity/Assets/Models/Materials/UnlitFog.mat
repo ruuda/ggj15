@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lambert1
+  m_Name: UnlitFog
   m_Shader: {fileID: 4800000, guid: 12ac0dd03f341504cb975d1574047ff3, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -24,28 +24,32 @@ Material:
         first:
           name: base
         second:
-          m_Texture: {fileID: 2800000, guid: 68277c05e9369b046bcdec56db0006ec, type: 3}
+          m_Texture: {fileID: 2800000, guid: f2d107ab35d21e945b81a74a0c196c81, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: fogDistance
-        second: 5
+        second: 4
       data:
         first:
           name: fogHeight
-        second: 1
+        second: 1.5
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .5, g: .5, b: .5, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: fogColour
+        second: {r: .367647052, g: 0, b: .345588237, a: 1}
       data:
         first:
           name: fogColourLow
-        second: {r: .801470578, g: .224137932, b: .522058845, a: .850980401}
+        second: {r: .867647052, g: .286206901, b: .661764681, a: .850980401}
       data:
         first:
           name: fogColourHigh
-        second: {r: 1, g: .589655221, b: .558823526, a: .850980401}
+        second: {r: 1, g: .775862038, b: .699999988, a: .874509811}
