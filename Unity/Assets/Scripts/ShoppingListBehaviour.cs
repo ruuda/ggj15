@@ -28,6 +28,9 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public Sprite lemonsCheckSprite;
 	public Sprite listBottomSprite;
 
+	public Sprite clockBackSprite;
+	public Sprite clockFrontSprite;
+
 	private List<Collectable> collectables = new List<Collectable>();
 
 	private Canvas uiCanvas;
@@ -93,7 +96,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 			image.rectTransform.sizeDelta = new Vector2(1.0f, 1.0f);
 			origin -= new Vector2(0.0f, uiHeight);
 			uiImages.Add (image);
-		}		
+		}
 	}
 
 	// Use this for initialization
