@@ -9,6 +9,11 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
 	private Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
+	private ChildBehaviour child;
+
+	void Awake () {
+		child = GameObject.FindGameObjectWithTag("Child").GetComponent<ChildBehaviour>();
+	}
 
 	void Start () {
 
@@ -72,7 +77,6 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	private void HandleMove () {
-
 		var movement = this.movements.Peek();
 		this.movementT += Time.deltaTime ;
 		var t = this.movementT / movement.duration;
@@ -83,6 +87,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			this.movementT = 0.0f;
 			t = 1.0f;
 			this.movements.Dequeue();
+			MoveCompleted(movement);
 		}
 
 		// Ease / smooph step.
@@ -96,6 +101,13 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (movement.kind == MovementKind.Rotate)
 		{
 			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, t);
+		}
+	}
+
+	private void MoveCompleted (Movement movement) {
+		// Walking dicomforts the child.
+		if (movement.kind == MovementKind.Move) {
+			child.DecrementComfort();
 		}
 	}
 }
