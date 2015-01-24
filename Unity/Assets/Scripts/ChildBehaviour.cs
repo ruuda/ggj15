@@ -26,12 +26,16 @@ public class ChildBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
-		if (this.isFollowing) {
+		if (this.movements.Count > 0) {
+			HandleMove();
+		}
+	}
+
+	void LateUpdate () {
+		if (this.movements.Count == 0 && isFollowing) {
 			// Track the parent (player).
 			this.transform.position = player.transform.position;
 			this.transform.rotation = player.transform.rotation;
-		} else {
-			HandleMove();
 		}
 	}
 
@@ -59,8 +63,7 @@ public class ChildBehaviour : MonoBehaviour {
 		var t = this.movementT / movement.duration;
 		
 		// This one is done now.
-		if (t > 1.0f)
-		{
+		if (t > 1.0f) {
 			this.movementT = 0.0f;
 			t = 1.0f;
 			this.movements.Dequeue();
@@ -70,19 +73,20 @@ public class ChildBehaviour : MonoBehaviour {
 		// Ease / smooph step.
 		t = Mathf.SmoothStep(0.0f, 1.0f, t);
 		
-		if (movement.kind == MovementKind.Move)
-		{
-			this.transform.position = movement.fromPos * (1.0f - t) + movement.toPos * t;
+		if (movement.kind == MovementKind.Move) {
+			// Move to the destination, but if we should follow the player whilst still in a movement,
+			// then move towards the player instead.
+			var to = isFollowing ? player.transform.position : movement.toPos;
+			this.transform.position = movement.fromPos * (1.0f - t) + to * t;
 		}
 		
-		if (movement.kind == MovementKind.Rotate)
-		{
+		if (movement.kind == MovementKind.Rotate) {
 			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, t);
 		}
 	}
 
 	private void MoveCompleted (Movement movement) {
-		if (this.movements.Count == 0) {
+		if (this.movements.Count == 0 && !isFollowing) {
 			ComputeNextMove(movement);
 		}
 	}
@@ -129,6 +133,16 @@ public class ChildBehaviour : MonoBehaviour {
 		// TODO: we could make the child stop / reverse / stop at candy.
 	}
 
+	void OnTriggerEnter(Collider other) {
+		// If the parent does find the child again after it ran away, the child will follow again,
+		// but it will be crying.
+		if (!isFollowing && other.gameObject.tag == "Player") {
+			isFollowing = true;
+			isCrying = true;
+			comfort = cryAt; // TODO: Could add some randomness?
+		}
+	}
+
 	// When the parent sets a step, it should derement the comfort of the child.
 	public void DecrementComfort () {
 		// Decrementing is only effective when the child is obedient and following the parent.
@@ -144,12 +158,14 @@ public class ChildBehaviour : MonoBehaviour {
 
 				// Turn around, run away from the parent!
 				this.movements.Enqueue(MakeRotation(180.0f));
+				return;
 			}
 
 			if (comfort <= cryAt) {
 				isCrying = true;
 				Debug.Log("Child began to cry!");
 				// TODO: effects and the like, feeback
+				return;
 			}
 		}
 	}
