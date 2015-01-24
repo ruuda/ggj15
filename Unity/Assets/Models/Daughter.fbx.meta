@@ -1,0 +1,117 @@
+fileFormatVersion: 2
+guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DaughterArm_L
+    100004: DaughterArm_R
+    100006: DaughterBow_L
+    100008: DaughterBow_R
+    100010: DaughterDress
+    100012: DaughterHair1
+    100014: DaughterHead
+    100016: DaughterLeg_L
+    100018: DaughterLeg_R
+    100020: DaughterPig_L
+    100022: DaughterPig_R
+    400000: //RootNode
+    400002: DaughterArm_L
+    400004: DaughterArm_R
+    400006: DaughterBow_L
+    400008: DaughterBow_R
+    400010: DaughterDress
+    400012: DaughterHair1
+    400014: DaughterHead
+    400016: DaughterLeg_L
+    400018: DaughterLeg_R
+    400020: DaughterPig_L
+    400022: DaughterPig_R
+    2300000: DaughterArm_L
+    2300002: DaughterArm_R
+    2300004: DaughterBow_L
+    2300006: DaughterBow_R
+    2300008: DaughterDress
+    2300010: DaughterHair1
+    2300012: DaughterHead
+    2300014: DaughterLeg_L
+    2300016: DaughterLeg_R
+    2300018: DaughterPig_L
+    2300020: DaughterPig_R
+    3300000: DaughterArm_L
+    3300002: DaughterArm_R
+    3300004: DaughterBow_L
+    3300006: DaughterBow_R
+    3300008: DaughterDress
+    3300010: DaughterHair1
+    3300012: DaughterHead
+    3300014: DaughterLeg_L
+    3300016: DaughterLeg_R
+    3300018: DaughterPig_L
+    3300020: DaughterPig_R
+    4300000: DaughterHair1
+    4300002: DaughterHead
+    4300004: DaughterDress
+    4300006: DaughterBow_R
+    4300008: DaughterPig_R
+    4300010: DaughterLeg_R
+    4300012: DaughterArm_R
+    4300014: DaughterBow_L
+    4300016: DaughterPig_L
+    4300018: DaughterLeg_L
+    4300020: DaughterArm_L
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0500000007
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
