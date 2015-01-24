@@ -10,6 +10,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public float listUIY = 0.4f;
 	public float listUIWidth = 0.25f;
 	public ParticleController particleController;
+	public GameObject pointerPrefab;
 
 	public Sprite listTopSprite;
 	public Sprite bananasSprite;
@@ -27,9 +28,6 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public Sprite lemonsSprite;
 	public Sprite lemonsCheckSprite;
 	public Sprite listBottomSprite;
-
-	public Sprite clockBackSprite;
-	public Sprite clockFrontSprite;
 
 	private List<Collectable> collectables = new List<Collectable>();
 
@@ -109,7 +107,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	
 	}
 
-	public void Collect(Collectable collectable, Vector3 at) {
+	public void Collect (Collectable collectable, Vector3 at) {
 		var index = this.collectables.IndexOf(collectable);
 		if (this.collectables.Remove(collectable)) {
 			Debug.Log(string.Format ("{0} collected", collectable));
@@ -123,6 +121,13 @@ public class ShoppingListBehaviour : MonoBehaviour {
 		} else {
 			Debug.Log(string.Format("{0} not collected, not on list", collectable));
 		}
+	}
+
+	public PointerBehaviour MaybeSpawnPrefabAt (Collectable collectable, Vector3 at) {
+		if (this.collectables.Contains(collectable)) {
+			return ((GameObject)GameObject.Instantiate(pointerPrefab, at + Vector3.up, Quaternion.identity)).GetComponent<PointerBehaviour>();
+		}
+		return null;
 	}
 }
 

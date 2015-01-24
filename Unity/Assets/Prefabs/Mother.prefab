@@ -605,6 +605,7 @@ MonoBehaviour:
   listUIY: .300000012
   listUIWidth: .25
   particleController: {fileID: 0}
+  pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
   listTopSprite: {fileID: 21300000, guid: 8294d3c8a851f7044b9b1813f07f9b6e, type: 3}
   bananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
   bananasCheckSprite: {fileID: 21300000, guid: fbf53e4eee4e82c42ae9a85a0e722679, type: 3}

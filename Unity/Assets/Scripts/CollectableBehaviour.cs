@@ -9,6 +9,7 @@ public class CollectableBehaviour : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		this.pointer = GameObject.FindGameObjectWithTag("Player").GetComponent<ShoppingListBehaviour>().MaybeSpawnPrefabAt(kind, transform.position);
 	}
 	
 	// Update is called once per frame
