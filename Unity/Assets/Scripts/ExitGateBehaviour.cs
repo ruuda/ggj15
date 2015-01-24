@@ -29,12 +29,10 @@ public class ExitGateBehaviour : MonoBehaviour {
 	private void UpdateCollider () {
 		var collider = GetComponent<BoxCollider>();
 		if (isFollowinig && listDone) {
-			collider.isTrigger = true; // May pass trough, and might as well detect when that happens.
-			GetComponent<BoxCollider>().enabled = false;
+			GetComponent<BoxCollider>().enabled = false; // May pass trough, and might as well detect when that happens.
 			Debug.Log("The gate has been opened.");
 		} else {
-			collider.isTrigger = false; // YOU SHALL NOT PASS
-			GetComponent<BoxCollider>().enabled = true;
+			GetComponent<BoxCollider>().enabled = true; // YOU SHALL NOT PASS
 			Debug.Log("The gate has been closed.");
 		}
 	}
