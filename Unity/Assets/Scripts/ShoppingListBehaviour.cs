@@ -23,6 +23,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	private List<Collectable> collectables = new List<Collectable>();
 
 	private Canvas uiCanvas;
+	private List<Image> uiImages = new List<Image>();
 
 	void Awake () {
 		// Get a random subset of the available items of the desired length.
@@ -70,6 +71,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 			image.rectTransform.anchoredPosition = new Vector2(0.0f, 0.0f);
 			image.rectTransform.sizeDelta = new Vector2(1.0f, 1.0f);
 			origin -= new Vector2(0.0f, uiHeight);
+			uiImages.Add (image);
 		}		
 	}
 
@@ -84,10 +86,13 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	}
 
 	public void Collect(Collectable collectable) {
+		var index = this.collectables.IndexOf(collectable);
 		if (this.collectables.Remove(collectable)) {
 			Debug.Log(string.Format ("{0} collected", collectable));
 			// TODO: Special effects, whatnot.
-			// TODO: Update list appearance.
+
+			// The index in the ui Image list is +1 because of the list top.
+			uiImages[index + 1].color = Color.black; // TODO: swap image? overlay?
 		} else {
 			Debug.Log(string.Format("{0} not collected, not on list", collectable));
 		}
