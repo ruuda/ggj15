@@ -63,6 +63,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		var goRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
 		var goForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 
+		// Prefer touch starting, that is a tap.
+		bool touchDetected = false;
 		foreach (var touch in Input.touches) {
 			if (touch.phase == TouchPhase.Began) {
 				float x = touch.position.x / Camera.main.pixelWidth;
@@ -71,8 +73,23 @@ public class PlayerBehaviour : MonoBehaviour {
 				if (x < 0.35) goLeft = true;
 				else if (x > 0.65) goRight = true;
 				else goForward = true;
-
+				touchDetected = true;
 				break;
+			}
+		}
+
+		// If there was no touch started, a stationary touch will do.
+		if (!touchDetected) {
+		foreach (var touch in Input.touches) {
+				if (touch.phase == TouchPhase.Stationary) {
+					float x = touch.position.x / Camera.main.pixelWidth;
+					float y = touch.position.y / Camera.main.pixelWidth;
+					
+					if (x < 0.35) goLeft = true;
+					else if (x > 0.65) goRight = true;
+					else goForward = true;
+					break;
+				}
 			}
 		}
 
