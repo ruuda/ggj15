@@ -133,10 +133,11 @@ public class ChildBehaviour : MonoBehaviour {
 		// TODO: we could make the child stop / reverse / stop at candy.
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter (Collider other) {
 		// If the parent does find the child again after it ran away, the child will follow again,
 		// but it will be crying.
 		if (!isFollowing && other.gameObject.tag == "Player") {
+			Debug.Log("Child and parent have been reunited.");
 			isFollowing = true;
 			isCrying = true;
 			comfort = cryAt; // TODO: Could add some randomness?
@@ -167,6 +168,19 @@ public class ChildBehaviour : MonoBehaviour {
 				// TODO: effects and the like, feeback
 				return;
 			}
+		}
+	}
+
+	public void GiveCandy () {
+		// If we were following, collecting candy resets the comfort to the initial value.
+		if (isFollowing) {
+			comfort = initialComfort;
+			isCrying = false;
+			Debug.Log("Child ate candy, it is happy again.");
+		} else {
+			// Otherwise, the child may stop running away and begin eating candy?
+			// Maybe with a certain probability?
+			// TODO
 		}
 	}
 }
