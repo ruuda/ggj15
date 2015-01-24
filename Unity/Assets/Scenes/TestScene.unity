@@ -3368,6 +3368,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 125976, guid: d554168e6f7d85c4781427c005b447b9, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d554168e6f7d85c4781427c005b447b9, type: 2}
   m_RootGameObject: {fileID: 2091920984}
@@ -4037,7 +4041,7 @@ GameObject:
   - 136: {fileID: 2091920987}
   - 23: {fileID: 2091920986}
   - 114: {fileID: 2091920985}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Child
   m_TagString: Child
   m_Icon: {fileID: 0}
