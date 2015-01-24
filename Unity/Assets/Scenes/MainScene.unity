@@ -446,6 +446,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listLength: 5
+  listUIX: .699999988
+  listUIY: .300000012
+  listUIWidth: .25
+  listTopSprite: {fileID: 21300000, guid: 8294d3c8a851f7044b9b1813f07f9b6e, type: 3}
+  bananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
+  strawberriesStprite: {fileID: 21300000, guid: 153198e8d0c49c54782eabe190fc63f1,
+    type: 3}
+  crispsSprite: {fileID: 21300000, guid: 8ac624192d835054a87d4453012067dd, type: 3}
+  milkSprite: {fileID: 21300000, guid: 4d344d69f29b02e43bd4dec704248b95, type: 3}
+  potatoesSprite: {fileID: 21300000, guid: e1b099b63b04f994fb976306ff01ea50, type: 3}
+  kiwisSprite: {fileID: 21300000, guid: f0c141b995b9b0443b267a7ce7429dcc, type: 3}
+  lemonsSprite: {fileID: 21300000, guid: 48518138d3cca88498c408e374d5f63f, type: 3}
+  listBottomSprite: {fileID: 21300000, guid: 2f52081bb6aaca24593722bf8931ad29, type: 3}
 --- !u!114 &868526788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +601,7 @@ GameObject:
   - 136: {fileID: 1069308126}
   - 23: {fileID: 1069308125}
   - 114: {fileID: 1069308124}
+  - 54: {fileID: 1069308129}
   m_Layer: 2
   m_Name: Child
   m_TagString: Child
@@ -667,6 +681,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!54 &1069308129
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5499490, guid: d554168e6f7d85c4781427c005b447b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 271812833}
+  m_GameObject: {fileID: 1069308123}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1248237718
 GameObject:
   m_ObjectHideFlags: 0
