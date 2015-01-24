@@ -44,5 +44,6 @@ public class MenuController : MonoBehaviour {
 
 	public void ControlsPlayClicked () {
 		Debug.Log("Starting game");
+		Application.LoadLevel("MainScene");
 	}
 }
