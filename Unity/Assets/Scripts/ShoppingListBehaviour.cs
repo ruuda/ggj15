@@ -112,8 +112,8 @@ public class ShoppingListBehaviour : MonoBehaviour {
 			Debug.Log(string.Format ("{0} collected", collectable));
 			// TODO: Special effects, whatnot.
 
-			// The index in the ui Image list is +1 because of the list top.
-			uiImages[index + 1].color = Color.black; // TODO: swap image? overlay?
+			// The index in the ui Image list is +1 because of the list top, check it now.
+			uiImages[index + 1].sprite = CollectableToCheckSprite(collectable);
 
 			// Spawn particles for visual feedback.
 			this.particleController.Burst(at);
