@@ -59,19 +59,36 @@ public class PlayerBehaviour : MonoBehaviour {
 		Debug.DrawRay(waistPosition, right * 1.4f, Color.blue, 0f);
 		Debug.DrawRay(waistPosition, forward * 1.4f, Color.cyan, 0f);
 
-		if (canLeft && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
+		var goLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+		var goRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+		var goForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+
+		foreach (var touch in Input.touches) {
+			if (touch.phase == TouchPhase.Began) {
+				float x = touch.position.x / Camera.main.pixelWidth;
+				float y = touch.position.y / Camera.main.pixelWidth;
+
+				if (x < 0.35) goLeft = true;
+				else if (x > 0.65) goRight = true;
+				else goForward = true;
+
+				break;
+			}
+		}
+
+		if (canLeft && goLeft) {
 			this.movements.Enqueue(MakeRotation(-90.0f));
 			this.movements.Enqueue(MakeMovement(left));
 			return;
 		}
 
-		if (canRight && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
+		if (canRight && goRight) {
 			this.movements.Enqueue(MakeRotation(90.0f));
 			this.movements.Enqueue(MakeMovement(right));
 			return;
 		}
 
-		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
+		if (canForward && goForward) {
 			this.movements.Enqueue(MakeMovement(forward));
 			return;
 		}
