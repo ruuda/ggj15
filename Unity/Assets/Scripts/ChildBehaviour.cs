@@ -7,25 +7,24 @@ public class ChildBehaviour : MonoBehaviour {
 	public int initialComfort = 10;
 	public int cryAt = 5;
 	public int runAwayAt = 0;
-	public float moveTime = 0.3f;
+	public float moveTime = 0.4f;
 	public float turnTime = 0.15f;
 
 	private bool isFollowing = true;
-	private bool isCrying = false;
+	public bool isCrying { get; private set; }
 	private GameObject player;
 	private int comfort;
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
 
 	private Vector3 waistPosition { get { return this.transform.position + new Vector3(0f, 0.5f, 0f); } }
-
-	// Use this for initialization
+	
 	void Start () {
 		this.player = GameObject.FindGameObjectWithTag("Player");
 		comfort = initialComfort;
+		isCrying = false;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (this.isFollowing) {
 			// Track the parent (player).
@@ -139,6 +138,8 @@ public class ChildBehaviour : MonoBehaviour {
 
 			if (comfort <= runAwayAt) {
 				isFollowing = false;
+				isCrying = false;
+				Debug.Log("Child ran away!");
 				// TODO: effects and the like, feedback
 
 				// Turn around, run away from the parent!
@@ -147,6 +148,7 @@ public class ChildBehaviour : MonoBehaviour {
 
 			if (comfort <= cryAt) {
 				isCrying = true;
+				Debug.Log("Child began to cry!");
 				// TODO: effects and the like, feeback
 			}
 		}

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public float moveTime = 0.4f;
+	public float moveTimeRegular = 0.3f;
+	public float moveTimeCrying = 0.6f;
 	public float turnTime = 0.1f;
 	
 	private Queue<Movement> movements = new Queue<Movement>();
@@ -30,7 +31,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Movement MakeMovement (Vector3 offset) {
 		return new Movement {
 			kind = MovementKind.Move,
-			duration = moveTime,
+			duration = child.isCrying ? moveTimeCrying : moveTimeRegular,
 			fromPos = this.transform.position,
 			toPos = this.transform.position + offset
 		};
@@ -58,19 +59,16 @@ public class PlayerBehaviour : MonoBehaviour {
 		Debug.DrawRay(waistPosition, right * 1.4f, Color.blue, 0f);
 		Debug.DrawRay(waistPosition, forward * 1.4f, Color.cyan, 0f);
 
-		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
-		{
+		if (canForward && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
 			this.movements.Enqueue(MakeMovement(forward));
 		}
 
-		if (canLeft && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
-		{
+		if (canLeft && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))) {
 			this.movements.Enqueue(MakeRotation(-90.0f));
 			this.movements.Enqueue(MakeMovement(left));
 		}
 
-		if (canRight && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
-		{
+		if (canRight && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))) {
 			this.movements.Enqueue(MakeRotation(90.0f));
 			this.movements.Enqueue(MakeMovement(right));
 		}
@@ -82,8 +80,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		var t = this.movementT / movement.duration;
 
 		// This one is done now.
-		if (t > 1.0f)
-		{
+		if (t > 1.0f) {
 			this.movementT = 0.0f;
 			t = 1.0f;
 			this.movements.Dequeue();
@@ -93,13 +90,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		// Ease / smooph step.
 		t = Mathf.SmoothStep(0.0f, 1.0f, t);
 
-		if (movement.kind == MovementKind.Move)
-		{
+		if (movement.kind == MovementKind.Move) {
 			this.transform.position = movement.fromPos * (1.0f - t) + movement.toPos * t;
 		}
 
-		if (movement.kind == MovementKind.Rotate)
-		{
+		if (movement.kind == MovementKind.Rotate) {
 			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, t);
 		}
 	}
