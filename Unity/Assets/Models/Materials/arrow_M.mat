@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: arrow_M
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: c8873098708c8a0478c67e16e99f03aa, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -20,9 +20,44 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+      data:
+        first:
+          name: base
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: fogDistance
+        second: 5
+      data:
+        first:
+          name: fogHeight
+        second: 1
+      data:
+        first:
+          name: speed
+        second: 20
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: .878000021, g: .494147032, b: .0193160139, a: 1}
+      data:
+        first:
+          name: fogColourLow
+        second: {r: .800000012, g: .223000005, b: .519999981, a: .851000011}
+      data:
+        first:
+          name: fogColourHigh
+        second: {r: 1, g: .588, b: .556999981, a: .851000011}
+      data:
+        first:
+          name: color1
+        second: {r: .948529422, g: .760784328, b: .933823526, a: 1}
+      data:
+        first:
+          name: color2
+        second: {r: 1, g: .224137932, b: .113725491, a: 1}
