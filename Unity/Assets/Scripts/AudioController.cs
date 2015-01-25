@@ -16,9 +16,11 @@ public class AudioController : MonoBehaviour {
 	public AudioClip[] sndChildLeave;
 	public AudioClip[] sndChildWandering;
 	public AudioClip[] sndJoin;
+	public AudioClip[] sndIntercom;
 
 	private float musicState = 1.0f; // 1.0 = happy, 0.0 = sad, -1.0 = lost.
 	private float desiredState = 1.0f;
+	private float intercomLeft = 18.0f;
 
 	private float[] smoothBuffer;
 
@@ -50,6 +52,12 @@ public class AudioController : MonoBehaviour {
 			smoothBuffer[i] += (smoothBuffer[i - 1] - smoothBuffer[i]) * Time.deltaTime * 2.0f;
 		}
 		musicState = smoothBuffer[smoothBuffer.Length - 1];
+
+		intercomLeft -= Time.deltaTime;
+		if (intercomLeft < 0.0f) {
+			intercomLeft = Random.Range(25.0f, 35.0f); // Average clip length is 11 seconds, so 20-30 sec intervals.
+			srcCollectable.PlayOneShot(RandomClip(sndIntercom));
+		}
 	}
 
 	public void SetHappy () {

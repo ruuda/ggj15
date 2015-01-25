@@ -417,6 +417,21 @@ MonoBehaviour:
   sndJoin:
   - {fileID: 8300000, guid: 16d6a52a1fb20b24d81aa34932a6b8ea, type: 3}
   - {fileID: 8300000, guid: 4f406b3a1905e184da61a5f6db0c1df0, type: 3}
+  sndIntercom:
+  - {fileID: 8300000, guid: 88f12ebf32b481945afa87e704e2caf4, type: 3}
+  - {fileID: 8300000, guid: 4e42a7f23c25eab4fbb04b23c4545fd1, type: 3}
+  - {fileID: 8300000, guid: d39514287ead18a47b97dc6f7fcc7c21, type: 3}
+  - {fileID: 8300000, guid: 461c41d8d380edc45b086729dbd51e8a, type: 3}
+  - {fileID: 8300000, guid: 07b54e164039b294281faf0173f25111, type: 3}
+  - {fileID: 8300000, guid: f9e4163c4d555d24a888437dd67202c4, type: 3}
+  - {fileID: 8300000, guid: 7e391dad2b794c044b723ff9fcdd74e9, type: 3}
+  - {fileID: 8300000, guid: 17c61f76a1ed3fd45ab66c02df712949, type: 3}
+  - {fileID: 8300000, guid: acf4841437382714b94025258eccf724, type: 3}
+  - {fileID: 8300000, guid: 03f202a568605bf4db2b58edacd6edad, type: 3}
+  - {fileID: 8300000, guid: 643f95ca06111d24d988b72dd126f213, type: 3}
+  - {fileID: 8300000, guid: 6697979cbfb15674e910bd9fab288844, type: 3}
+  - {fileID: 8300000, guid: bfa76a3695db90746b01576dd0692b3b, type: 3}
+  - {fileID: 8300000, guid: 768cfd5e2b8859f4bb70dd85f9a9c963, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
