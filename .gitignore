@@ -28,3 +28,7 @@ sysinfo.txt
 .Trashes
 Thumbs.db
 Thumbs.db.meta
+
+# Encoded audio files
+/Audio/*.flac
+/Audio/*.ogg
