@@ -1044,7 +1044,7 @@ Animation:
   m_GameObject: {fileID: 139882}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1, type: 3}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1, type: 3}
   - {fileID: 7400002, guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1, type: 3}
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   cryAt: 6
   runAwayAt: 0
   moveTime: .800000012
-  turnTime: .150000006
+  turnTime: .200000003
   exitGate: {fileID: 0}
   audioController: {fileID: 0}
   particleController: {fileID: 0}

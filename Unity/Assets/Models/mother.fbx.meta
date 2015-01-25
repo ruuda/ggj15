@@ -47,6 +47,9 @@ ModelImporter:
     100082: Mother:mesh
     100084: Mother:R_Arm
     100086: Mother:R_Leg
+    100088: group
+    100090: Mother:charachterNode
+    100092: pasted__pCylinder1
     400000: //RootNode
     400002: MotherArm_L
     400004: MotherArm_R
@@ -91,6 +94,9 @@ ModelImporter:
     400082: Mother:mesh
     400084: Mother:R_Arm
     400086: Mother:R_Leg
+    400088: group
+    400090: Mother:charachterNode
+    400092: pasted__pCylinder1
     2300000: MotherArm_L
     2300002: MotherArm_R
     2300004: MotherDress
@@ -100,6 +106,7 @@ ModelImporter:
     2300012: MotherHead
     2300014: MotherLeg_R
     2300016: MotherLeg_R1
+    2300018: pasted__pCylinder1
     3300000: MotherArm_L
     3300002: MotherArm_R
     3300004: MotherDress
@@ -109,6 +116,7 @@ ModelImporter:
     3300012: MotherHead
     3300014: MotherLeg_R
     3300016: MotherLeg_R1
+    3300018: pasted__pCylinder1
     4300000: MotherHair1
     4300002: MotherHead
     4300004: MotherDress
@@ -126,7 +134,9 @@ ModelImporter:
     4300028: Mother:L_Leg
     4300030: Mother:R_Arm
     4300032: Mother:L_Arm
+    4300034: pasted__pCylinder1
     7400000: Walk
+    7400002: Idle
     9500000: //RootNode
     11100000: //RootNode
     13700000: Mother:Dress
@@ -246,6 +256,108 @@ ModelImporter:
       - path: Mother:mesh/Mother:R_Arm
         weight: 1
       - path: Mother:mesh/Mother:R_Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 19
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/pasted__pCylinder1
+        weight: 1
+      - path: Mother:charachterNode
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip/Mother:jntBn_L_Knee
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip/Mother:jntBn_L_Knee/Mother:jntBn_L_Ankle
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip/Mother:jntBn_L_Knee/Mother:jntBn_L_Ankle/Mother:jntBn_L_Ball
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip/Mother:jntBn_R_Knee
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip/Mother:jntBn_R_Knee/Mother:jntBn_R_Ankle
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip/Mother:jntBn_R_Knee/Mother:jntBn_R_Ankle/Mother:jntBn_R_Ball
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle/Mother:jntBn_L_Shoulder
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle/Mother:jntBn_L_Shoulder/Mother:jntBn_L_Elbow
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle/Mother:jntBn_L_Shoulder/Mother:jntBn_L_Elbow/Mother:jntBn_L_Wrist
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_Neck
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_Neck/Mother:jntBn_Head
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle/Mother:jntBn_R_Shoulder
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle/Mother:jntBn_R_Shoulder/Mother:jntBn_R_Elbow
+        weight: 1
+      - path: Mother:charachterNode/Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle/Mother:jntBn_R_Shoulder/Mother:jntBn_R_Elbow/Mother:jntBn_R_Wrist
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:Dress
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:Flower
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:Hair
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:Head
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:L_Arm
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:L_Leg
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:R_Arm
+        weight: 1
+      - path: Mother:charachterNode/Mother:mesh/Mother:R_Leg
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}

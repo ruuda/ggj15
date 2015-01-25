@@ -182,6 +182,7 @@ public class ChildBehaviour : MonoBehaviour {
 		if (isFollowing) {
 			OnHappy();
 			particleController.Burst(at);
+			audioController.CollectAt(at);
 		} else {
 			// Otherwise, the child may stop running away and begin eating candy?
 			// Maybe with a certain probability?
