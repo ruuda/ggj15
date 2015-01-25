@@ -15,6 +15,39 @@ ModelImporter:
     100018: DaughterLeg_R
     100020: DaughterPig_L
     100022: DaughterPig_R
+    100024: Daughter:Arm_L
+    100026: Daughter:Arm_R
+    100028: Daughter:Dress
+    100030: Daughter:globalMove
+    100032: Daughter:Hair
+    100034: Daughter:Head
+    100036: Daughter:jntBn_Head
+    100038: Daughter:jntBn_L_Ankle
+    100040: Daughter:jntBn_L_Ball
+    100042: Daughter:jntBn_L_Clavicle
+    100044: Daughter:jntBn_L_Elbow
+    100046: Daughter:jntBn_L_Hip
+    100048: Daughter:jntBn_L_Knee
+    100050: Daughter:jntBn_L_Shoulder
+    100052: Daughter:jntBn_L_Wrist
+    100054: Daughter:jntBn_Neck
+    100056: Daughter:jntBn_R_Ankle
+    100058: Daughter:jntBn_R_Ball
+    100060: Daughter:jntBn_R_Clavicle
+    100062: Daughter:jntBn_R_Elbow
+    100064: Daughter:jntBn_R_Hip
+    100066: Daughter:jntBn_R_Knee
+    100068: Daughter:jntBn_R_Shoulder
+    100070: Daughter:jntBn_R_Wrist
+    100072: Daughter:jntDrv_Torso_1
+    100074: Daughter:jntDrv_Torso_2
+    100076: Daughter:jntDrv_Torso_3
+    100078: Daughter:jntDrv_Torso_4
+    100080: Daughter:joints
+    100082: Daughter:jointsBn
+    100084: Daughter:Leg_L
+    100086: Daughter:Leg_R
+    100088: Daughter:Mesh
     400000: //RootNode
     400002: DaughterArm_L
     400004: DaughterArm_R
@@ -27,6 +60,39 @@ ModelImporter:
     400018: DaughterLeg_R
     400020: DaughterPig_L
     400022: DaughterPig_R
+    400024: Daughter:Arm_L
+    400026: Daughter:Arm_R
+    400028: Daughter:Dress
+    400030: Daughter:globalMove
+    400032: Daughter:Hair
+    400034: Daughter:Head
+    400036: Daughter:jntBn_Head
+    400038: Daughter:jntBn_L_Ankle
+    400040: Daughter:jntBn_L_Ball
+    400042: Daughter:jntBn_L_Clavicle
+    400044: Daughter:jntBn_L_Elbow
+    400046: Daughter:jntBn_L_Hip
+    400048: Daughter:jntBn_L_Knee
+    400050: Daughter:jntBn_L_Shoulder
+    400052: Daughter:jntBn_L_Wrist
+    400054: Daughter:jntBn_Neck
+    400056: Daughter:jntBn_R_Ankle
+    400058: Daughter:jntBn_R_Ball
+    400060: Daughter:jntBn_R_Clavicle
+    400062: Daughter:jntBn_R_Elbow
+    400064: Daughter:jntBn_R_Hip
+    400066: Daughter:jntBn_R_Knee
+    400068: Daughter:jntBn_R_Shoulder
+    400070: Daughter:jntBn_R_Wrist
+    400072: Daughter:jntDrv_Torso_1
+    400074: Daughter:jntDrv_Torso_2
+    400076: Daughter:jntDrv_Torso_3
+    400078: Daughter:jntDrv_Torso_4
+    400080: Daughter:joints
+    400082: Daughter:jointsBn
+    400084: Daughter:Leg_L
+    400086: Daughter:Leg_R
+    400088: Daughter:Mesh
     2300000: DaughterArm_L
     2300002: DaughterArm_R
     2300004: DaughterBow_L
@@ -60,7 +126,24 @@ ModelImporter:
     4300016: DaughterPig_L
     4300018: DaughterLeg_L
     4300020: DaughterArm_L
+    4300022: Daughter:Head
+    4300024: Daughter:Dress
+    4300026: Daughter:Leg_R
+    4300028: Daughter:Arm_R
+    4300030: Daughter:Leg_L
+    4300032: Daughter:Arm_L
+    4300034: Daughter:Hair
+    7400000: Walk
+    7400002: Idle
     9500000: //RootNode
+    11100000: //RootNode
+    13700000: Daughter:Arm_L
+    13700002: Daughter:Arm_R
+    13700004: Daughter:Dress
+    13700006: Daughter:Hair
+    13700008: Daughter:Head
+    13700010: Daughter:Leg_L
+    13700012: Daughter:Leg_R
   materials:
     importMaterials: 1
     materialName: 0
@@ -76,11 +159,199 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Daughter:globalMove
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip/Daughter:jntBn_L_Knee
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip/Daughter:jntBn_L_Knee/Daughter:jntBn_L_Ankle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip/Daughter:jntBn_L_Knee/Daughter:jntBn_L_Ankle/Daughter:jntBn_L_Ball
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip/Daughter:jntBn_R_Knee
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip/Daughter:jntBn_R_Knee/Daughter:jntBn_R_Ankle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip/Daughter:jntBn_R_Knee/Daughter:jntBn_R_Ankle/Daughter:jntBn_R_Ball
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle/Daughter:jntBn_L_Shoulder
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle/Daughter:jntBn_L_Shoulder/Daughter:jntBn_L_Elbow
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle/Daughter:jntBn_L_Shoulder/Daughter:jntBn_L_Elbow/Daughter:jntBn_L_Wrist
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_Neck
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_Neck/Daughter:jntBn_Head
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle/Daughter:jntBn_R_Shoulder
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle/Daughter:jntBn_R_Shoulder/Daughter:jntBn_R_Elbow
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle/Daughter:jntBn_R_Shoulder/Daughter:jntBn_R_Elbow/Daughter:jntBn_R_Wrist
+        weight: 1
+      - path: Daughter:Mesh
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Arm_L
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Arm_R
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Dress
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Hair
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Head
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Leg_L
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Leg_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 19
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Daughter:globalMove
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip/Daughter:jntBn_L_Knee
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip/Daughter:jntBn_L_Knee/Daughter:jntBn_L_Ankle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_L_Hip/Daughter:jntBn_L_Knee/Daughter:jntBn_L_Ankle/Daughter:jntBn_L_Ball
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip/Daughter:jntBn_R_Knee
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip/Daughter:jntBn_R_Knee/Daughter:jntBn_R_Ankle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntBn_R_Hip/Daughter:jntBn_R_Knee/Daughter:jntBn_R_Ankle/Daughter:jntBn_R_Ball
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle/Daughter:jntBn_L_Shoulder
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle/Daughter:jntBn_L_Shoulder/Daughter:jntBn_L_Elbow
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_L_Clavicle/Daughter:jntBn_L_Shoulder/Daughter:jntBn_L_Elbow/Daughter:jntBn_L_Wrist
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_Neck
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_Neck/Daughter:jntBn_Head
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle/Daughter:jntBn_R_Shoulder
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle/Daughter:jntBn_R_Shoulder/Daughter:jntBn_R_Elbow
+        weight: 1
+      - path: Daughter:globalMove/Daughter:joints/Daughter:jointsBn/Daughter:jntDrv_Torso_1/Daughter:jntDrv_Torso_2/Daughter:jntDrv_Torso_3/Daughter:jntDrv_Torso_4/Daughter:jntBn_R_Clavicle/Daughter:jntBn_R_Shoulder/Daughter:jntBn_R_Elbow/Daughter:jntBn_R_Wrist
+        weight: 1
+      - path: Daughter:Mesh
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Arm_L
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Arm_R
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Dress
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Hair
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Head
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Leg_L
+        weight: 1
+      - path: Daughter:Mesh/Daughter:Leg_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .0500000007
+    globalScale: .100000001
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -112,6 +383,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
