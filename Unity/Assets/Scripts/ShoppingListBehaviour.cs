@@ -41,6 +41,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public Sprite listBottomSprite;
 
 	private List<Collectable> collectables = new List<Collectable>();
+	private List<Collectable> uiList;
 
 	private Canvas uiCanvas;
 	private List<Image> uiImages = new List<Image>();
@@ -52,6 +53,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 		for (int i = 0; i < listLength; i++) {
 			collectables.Add(available[i]);
 		}
+		uiList = new List<Collectable>(collectables);
 	}
 
 	private Sprite CollectableToSprite (Collectable collectable) {
@@ -111,8 +113,9 @@ public class ShoppingListBehaviour : MonoBehaviour {
 			image.rectTransform.anchoredPosition = new Vector2(0.0f, 0.0f);
 			image.rectTransform.sizeDelta = new Vector2(1.0f, 1.0f);
 			origin += new Vector2(0.0f, uiHeight);
-			uiImages.Insert(0, image);
+			uiImages.Add(image);
 		}
+		uiImages.Reverse();
 	}
 
 	// Use this for initialization
@@ -126,7 +129,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	}
 
 	public void Collect (Collectable collectable, Vector3 at) {
-		var index = this.collectables.IndexOf(collectable);
+		var index = this.uiList.IndexOf(collectable);
 		if (this.collectables.Remove(collectable)) {
 			Debug.Log(string.Format ("{0} collected", collectable));
 
