@@ -5,7 +5,8 @@ public class CandyBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		// Spawn a pointer
+		GameObject.FindGameObjectWithTag("Player").GetComponent<ShoppingListBehaviour>().SpawnCandyPrefabAt(transform.position);
 	}
 
 	// Update is called once per frame

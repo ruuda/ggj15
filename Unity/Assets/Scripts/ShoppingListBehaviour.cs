@@ -11,6 +11,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public float listUIWidth = 0.25f;
 	public ParticleController particleController;
 	public GameObject pointerPrefab;
+	public GameObject candyPointerPrefab;
 	public ExitGateBehaviour exitGate;
 	public AudioController audioController;
 
@@ -152,6 +153,10 @@ public class ShoppingListBehaviour : MonoBehaviour {
 			return ((GameObject)GameObject.Instantiate(pointerPrefab, at + Vector3.up, Quaternion.identity)).GetComponent<PointerBehaviour>();
 		}
 		return null;
+	}
+
+	public void SpawnCandyPrefabAt (Vector3 at) {
+		GameObject.Instantiate(candyPointerPrefab, at + Vector3.up, Quaternion.identity);
 	}
 }
 

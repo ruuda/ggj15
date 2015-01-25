@@ -1,41 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &133494
+--- !u!1 &187850
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 433494}
-  - 33: {fileID: 3333494}
-  - 23: {fileID: 2333494}
-  - 114: {fileID: 11433494}
+  - 4: {fileID: 487850}
+  - 33: {fileID: 3387850}
+  - 23: {fileID: 2387850}
+  - 114: {fileID: 11487850}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: CandyPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &433494
+--- !u!4 &487850
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133494}
+  m_GameObject: {fileID: 187850}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.3499999, y: 2, z: 5.88899994}
+  m_LocalPosition: {x: -4.3499999, y: 2, z: 3.88899994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2333494
+--- !u!23 &2387850
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133494}
+  m_GameObject: {fileID: 187850}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -50,19 +50,19 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3333494
+--- !u!33 &3387850
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133494}
+  m_GameObject: {fileID: 187850}
   m_Mesh: {fileID: 4300000, guid: f4f86062da6ebe94f84122b2e9414394, type: 3}
---- !u!114 &11433494
+--- !u!114 &11487850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133494}
+  m_GameObject: {fileID: 187850}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb087b3d3d74b15438d99528e7629007, type: 3}
@@ -80,6 +80,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 133494}
+  m_RootGameObject: {fileID: 187850}
   m_IsPrefabParent: 1
   m_IsExploded: 1

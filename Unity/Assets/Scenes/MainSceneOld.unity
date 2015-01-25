@@ -4260,7 +4260,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439882, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11439948, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
       propertyPath: exitGate
@@ -4535,7 +4535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485332, guid: 677a71b9abf3fa4409800678f4c7cd25, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 677a71b9abf3fa4409800678f4c7cd25, type: 2}
@@ -4654,7 +4654,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &1085093766
 GameObject:
   m_ObjectHideFlags: 0
@@ -5173,6 +5173,7 @@ MonoBehaviour:
   listUIWidth: .200000003
   particleController: {fileID: 81610849}
   pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
+  candyPointerPrefab: {fileID: 187850, guid: 1a6d01e41a3f7c048a5a44477131739e, type: 2}
   exitGate: {fileID: 1310734336}
   audioController: {fileID: 493577617}
   listApplesSprite: {fileID: 21300000, guid: 6542eef25f5a52a4784f4c3e3f2631dd, type: 3}
@@ -5588,7 +5589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22494280, guid: 1d6497c02a4bcdc4eb9da29f8c6f2d37, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22494280, guid: 1d6497c02a4bcdc4eb9da29f8c6f2d37, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -6008,7 +6009,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &1466735322
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,7 +6172,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487074, guid: ebf69b8d2f0bbed44880cd3bb0a8f4a2, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebf69b8d2f0bbed44880cd3bb0a8f4a2, type: 2}
@@ -6596,7 +6597,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 0138bed01f834344faf7b240c04a98fd, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2300050, guid: 0138bed01f834344faf7b240c04a98fd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7984,7 +7985,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 32eaa9e52f78d9e42b74410c138ea5c3, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 32eaa9e52f78d9e42b74410c138ea5c3, type: 3}
       propertyPath: m_LocalScale.y
@@ -8074,7 +8075,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 422186, guid: 50a3035ec25c64f4fa8cedfda0bde4d8, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11422112, guid: 50a3035ec25c64f4fa8cedfda0bde4d8, type: 2}
       propertyPath: particleController

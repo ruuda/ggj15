@@ -1212,6 +1212,7 @@ MonoBehaviour:
   listUIWidth: .200000003
   particleController: {fileID: 0}
   pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
+  candyPointerPrefab: {fileID: 187850, guid: 1a6d01e41a3f7c048a5a44477131739e, type: 2}
   exitGate: {fileID: 0}
   audioController: {fileID: 0}
   listApplesSprite: {fileID: 21300000, guid: 6542eef25f5a52a4784f4c3e3f2631dd, type: 3}
