@@ -27,7 +27,6 @@ public class ExitGateBehaviour : MonoBehaviour {
 	}
 
 	private void UpdateCollider () {
-		var collider = GetComponent<BoxCollider>();
 		if (isFollowinig && listDone) {
 			GetComponent<BoxCollider>().enabled = false; // May pass trough, and might as well detect when that happens.
 			Debug.Log("The gate has been opened.");

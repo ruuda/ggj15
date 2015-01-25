@@ -10,6 +10,7 @@ public class ChildBehaviour : MonoBehaviour {
 	public float moveTime = 0.4f;
 	public float turnTime = 0.15f;
 	public ExitGateBehaviour exitGate;
+	public AudioController audioController;
 
 	private bool isFollowing = true;
 	public bool isCrying { get; private set; }
@@ -138,10 +139,6 @@ public class ChildBehaviour : MonoBehaviour {
 		// If the parent does find the child again after it ran away, the child will follow again,
 		// but it will be crying.
 		if (!isFollowing && other.gameObject.tag == "Player") {
-			isFollowing = true;
-			isCrying = true;
-			comfort = cryAt; // TODO: Could add some randomness?
-
 			OnJoining();
 		}
 	}
@@ -154,9 +151,6 @@ public class ChildBehaviour : MonoBehaviour {
 			Debug.Log(string.Format("Decremented child comport, comport is {0}", this.comfort));
 
 			if (comfort <= runAwayAt) {
-				isFollowing = false;
-				isCrying = false;
-
 				OnLeaving();
 
 				// Turn around, run away from the parent!
@@ -165,9 +159,7 @@ public class ChildBehaviour : MonoBehaviour {
 			}
 
 			if (comfort <= cryAt) {
-				isCrying = true;
-				Debug.Log("Child began to cry!");
-				// TODO: effects and the like, feeback
+				OnCrying();
 				return;
 			}
 		}
@@ -176,9 +168,7 @@ public class ChildBehaviour : MonoBehaviour {
 	public void GiveCandy () {
 		// If we were following, collecting candy resets the comfort to the initial value.
 		if (isFollowing) {
-			comfort = initialComfort;
-			isCrying = false;
-			Debug.Log("Child ate candy, it is happy again.");
+			OnHappy();
 		} else {
 			// Otherwise, the child may stop running away and begin eating candy?
 			// Maybe with a certain probability?
@@ -186,16 +176,43 @@ public class ChildBehaviour : MonoBehaviour {
 		}
 	}
 
+	private void OnCrying () {
+		Debug.Log("Child began to cry!");
+		isCrying = true;
+
+		audioController.SetSad();
+
+		// TODO: effects and the like, feeback
+	}
+
+	private void OnHappy () {
+		Debug.Log("Child ate candy, it is happy again.");
+		comfort = initialComfort;
+		isCrying = false;
+		audioController.SetHappy();
+	}
+	
 	private void OnLeaving () {
 		Debug.Log("Child ran away!");
 		// TODO: effects and the like, feedback
 
+		isFollowing = false;
+		isCrying = false;
+		
 		exitGate.SetFollowing(false);
+		audioController.SetLost();
+		// TODO: one-shot runaway sound
 	}
 
 	private void OnJoining () {
 		Debug.Log("Child and parent have been reunited.");
 
+		isFollowing = true;
+		isCrying = true;
+		comfort = cryAt; // TODO: Could add some randomness?
+		
 		exitGate.SetFollowing(true);
+		audioController.SetSad();
+		// TODO: one-shot join sound.
 	}
 }

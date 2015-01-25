@@ -76,7 +76,6 @@ public class PlayerBehaviour : MonoBehaviour {
 		foreach (var touch in Input.touches) {
 			if (touch.phase == TouchPhase.Began) {
 				float x = touch.position.x / Camera.main.pixelWidth;
-				float y = touch.position.y / Camera.main.pixelWidth;
 
 				if (x < 0.35) goLeft = true;
 				else if (x > 0.65) goRight = true;
@@ -91,7 +90,6 @@ public class PlayerBehaviour : MonoBehaviour {
 		foreach (var touch in Input.touches) {
 				if (touch.phase == TouchPhase.Stationary) {
 					float x = touch.position.x / Camera.main.pixelWidth;
-					float y = touch.position.y / Camera.main.pixelWidth;
 					
 					if (x < 0.35) goLeft = true;
 					else if (x > 0.65) goRight = true;

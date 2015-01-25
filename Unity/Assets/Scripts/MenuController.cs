@@ -17,7 +17,6 @@ public class MenuController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		initialGroup = controlsPanel.GetComponent<CanvasGroup>();
 		controlsGroup = controlsPanel.GetComponent<CanvasGroup>();
 		controlsGroup.alpha = 0.0f;
 		controlsPanel.SetActive(false);
