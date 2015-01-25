@@ -1092,8 +1092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0709d649de8df459eac1d6030b1e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTimeRegular: .708329976
-  moveTimeCrying: .600000024
+  moveTimeRegular: .5
+  moveTimeCrying: .899999976
   turnTime: .100000001
 --- !u!114 &11418964
 MonoBehaviour:
@@ -1113,6 +1113,7 @@ MonoBehaviour:
   particleController: {fileID: 0}
   pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
   exitGate: {fileID: 0}
+  audioController: {fileID: 0}
   listApplesSprite: {fileID: 21300000, guid: 6542eef25f5a52a4784f4c3e3f2631dd, type: 3}
   listBananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
   listCheeseSprite: {fileID: 21300000, guid: c1a0d27affa9f2f408b328474a9ec2df, type: 3}
