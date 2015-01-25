@@ -1579,7 +1579,7 @@ Prefab:
       objectReference: {fileID: 1310734336}
     - target: {fileID: 11418964, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
       propertyPath: listLength
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
@@ -3982,30 +3982,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b97bb6bb6c225148bab28a39bd4ec69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listLength: 1
-  listUIX: .699999988
-  listUIY: .300000012
-  listUIWidth: .25
+  listLength: 5
+  listUIX: .75
+  listUIY: -.100000001
+  listUIWidth: .200000003
   particleController: {fileID: 81610849}
   pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
   exitGate: {fileID: 1310734336}
+  listApplesSprite: {fileID: 21300000, guid: 6542eef25f5a52a4784f4c3e3f2631dd, type: 3}
+  listBananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
+  listCheeseSprite: {fileID: 21300000, guid: c1a0d27affa9f2f408b328474a9ec2df, type: 3}
+  listCucumbersSprite: {fileID: 21300000, guid: 52a1ca26edb7c394682566be65bdaef4,
+    type: 3}
+  listEggsSprite: {fileID: 21300000, guid: 390e5a5727a569b4dad89dc5890b47c3, type: 3}
+  listGrapesSprite: {fileID: 21300000, guid: b37791d7538a55346be36186bef441b8, type: 3}
+  listHamSprite: {fileID: 21300000, guid: c0d944cdcb2335e428ab0d4d21de2b61, type: 3}
+  listMilkSprite: {fileID: 21300000, guid: 1177da05766a876438045588bbdb8839, type: 3}
+  listPeppersSprite: {fileID: 21300000, guid: bcafa4a7baf4a5145ae0ee28daf05a79, type: 3}
+  listSausagesSprite: {fileID: 21300000, guid: 53fdcae82e4f50845846790af5e4519e, type: 3}
+  listApplesCheckSprite: {fileID: 21300000, guid: bae01173de040a4438a29230e39f1328,
+    type: 3}
+  listBananasCheckSprite: {fileID: 21300000, guid: fbf53e4eee4e82c42ae9a85a0e722679,
+    type: 3}
+  listCheeseCheckSprite: {fileID: 21300000, guid: 31c7b777e82256d448c0f46e8e182e40,
+    type: 3}
+  listCucumbersCheckSprite: {fileID: 21300000, guid: 1760213adf4fa374fb65ccbac9ffc152,
+    type: 3}
+  listEggsCheckSprite: {fileID: 21300000, guid: 91cc95b8dd22c1c4690104db188404db,
+    type: 3}
+  listGrapesCheckSprite: {fileID: 21300000, guid: a7788af6f9ff4874cb987de9d233aae0,
+    type: 3}
+  listHamCheckSprite: {fileID: 21300000, guid: 24bbca9bc4371f34d9e54bbc1a169333, type: 3}
+  listMilkCheckSprite: {fileID: 21300000, guid: e79f0928f819f0f47b5728c1e02e2a18,
+    type: 3}
+  listPeppersCheckSprite: {fileID: 21300000, guid: 787b98f93944201428742d4dd77fb3e6,
+    type: 3}
+  listSausagesCheckSprite: {fileID: 21300000, guid: 23fc35fc938bed94984c9b5a74b8776e,
+    type: 3}
   listTopSprite: {fileID: 21300000, guid: 8294d3c8a851f7044b9b1813f07f9b6e, type: 3}
-  bananasSprite: {fileID: 21300000, guid: aed1c34a77cea784bbc8645a8eff0d57, type: 3}
-  bananasCheckSprite: {fileID: 21300000, guid: fbf53e4eee4e82c42ae9a85a0e722679, type: 3}
-  strawberriesSprite: {fileID: 21300000, guid: 153198e8d0c49c54782eabe190fc63f1, type: 3}
-  strawberriesCheckSprite: {fileID: 21300000, guid: 0be5d809ca11e8e409244f4b61ab9f9c,
-    type: 3}
-  crispsSprite: {fileID: 21300000, guid: 8ac624192d835054a87d4453012067dd, type: 3}
-  crispsCheckSprite: {fileID: 21300000, guid: 2093321b7fd81284aa1651bba4325a40, type: 3}
-  milkSprite: {fileID: 21300000, guid: 4d344d69f29b02e43bd4dec704248b95, type: 3}
-  milkCheckSprite: {fileID: 21300000, guid: f6327427002020442a88eef692acc577, type: 3}
-  potatoesSprite: {fileID: 21300000, guid: e1b099b63b04f994fb976306ff01ea50, type: 3}
-  potatoesCheckSprite: {fileID: 21300000, guid: 3b9b75375f469294ca13372c18529ba9,
-    type: 3}
-  kiwisSprite: {fileID: 21300000, guid: f0c141b995b9b0443b267a7ce7429dcc, type: 3}
-  kiwisCheckSprite: {fileID: 21300000, guid: b2ed086c2f4ba074398d8ea826074c8e, type: 3}
-  lemonsSprite: {fileID: 21300000, guid: 48518138d3cca88498c408e374d5f63f, type: 3}
-  lemonsCheckSprite: {fileID: 21300000, guid: 456ef1355bc310a428dc1ae81fbae331, type: 3}
   listBottomSprite: {fileID: 21300000, guid: 2f52081bb6aaca24593722bf8931ad29, type: 3}
 --- !u!114 &1364028097
 MonoBehaviour:

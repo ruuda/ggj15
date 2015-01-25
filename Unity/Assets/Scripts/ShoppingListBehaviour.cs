@@ -7,7 +7,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 
 	public int listLength = 5;
 	public float listUIX = 0.7f;
-	public float listUIY = 0.4f;
+	public float listUIY = 0.05f;
 	public float listUIWidth = 0.25f;
 	public ParticleController particleController;
 	public GameObject pointerPrefab;
@@ -95,6 +95,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 		sprites.Add(listTopSprite);
 		sprites.AddRange(collectables.Select(c => CollectableToSprite(c)));
 		sprites.Add(listBottomSprite);
+		sprites.Reverse();
 
 		var origin = new Vector2(listUIX, listUIY);
 		foreach (var sprite in sprites) {
@@ -103,12 +104,12 @@ public class ShoppingListBehaviour : MonoBehaviour {
 			var image = spriteObject.AddComponent<Image>();
 			image.sprite = sprite;
 			var uiHeight = sprite.bounds.size.y / sprite.bounds.size.x * listUIWidth * Camera.main.aspect;
-			image.rectTransform.anchorMin = origin - new Vector2(0.0f, uiHeight);
-			image.rectTransform.anchorMax = origin + new Vector2(listUIWidth, 0.0f);
+			image.rectTransform.anchorMin = origin;
+			image.rectTransform.anchorMax = origin + new Vector2(listUIWidth, uiHeight);
 			image.rectTransform.anchoredPosition = new Vector2(0.0f, 0.0f);
 			image.rectTransform.sizeDelta = new Vector2(1.0f, 1.0f);
-			origin -= new Vector2(0.0f, uiHeight);
-			uiImages.Add (image);
+			origin += new Vector2(0.0f, uiHeight);
+			uiImages.Insert(0, image);
 		}
 	}
 

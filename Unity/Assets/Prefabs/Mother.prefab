@@ -601,9 +601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listLength: 5
-  listUIX: .699999988
-  listUIY: .300000012
-  listUIWidth: .25
+  listUIX: .75
+  listUIY: -.100000001
+  listUIWidth: .200000003
   particleController: {fileID: 0}
   pointerPrefab: {fileID: 133494, guid: a642dffb807c2a047a155c22cbc27ad3, type: 2}
   exitGate: {fileID: 0}
