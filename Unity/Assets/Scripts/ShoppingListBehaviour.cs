@@ -12,6 +12,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public ParticleController particleController;
 	public GameObject pointerPrefab;
 	public ExitGateBehaviour exitGate;
+	public AudioController audioController;
 
 	public Sprite listApplesSprite;
 	public Sprite listBananasSprite;
@@ -127,13 +128,15 @@ public class ShoppingListBehaviour : MonoBehaviour {
 		var index = this.collectables.IndexOf(collectable);
 		if (this.collectables.Remove(collectable)) {
 			Debug.Log(string.Format ("{0} collected", collectable));
-			// TODO: Special effects, whatnot.
 
 			// The index in the ui Image list is +1 because of the list top, check it now.
 			uiImages[index + 1].sprite = CollectableToCheckSprite(collectable);
 
 			// Spawn particles for visual feedback.
 			this.particleController.Burst(at);
+
+			// Play collect sound.
+			this.audioController.CollectAt(at);
 
 			// If this was the last one, the gate may be opened.
 			if (this.collectables.Count == 0) {

@@ -6,6 +6,11 @@ public class AudioController : MonoBehaviour {
 	public AudioSource musicHappy;
 	public AudioSource musicSad;
 	public AudioSource musicLost;
+	public AudioSource srcCollectable;
+	public AudioSource srcMother;
+	public AudioSource srcChild;
+
+	public AudioClip sndCollect;
 
 	private float musicState = 1.0f; // 1.0 = happy, 0.0 = sad, -1.0 = lost.
 	private float desiredState = 1.0f;
@@ -55,5 +60,10 @@ public class AudioController : MonoBehaviour {
 	public void SetLost () {
 		desiredState = -1.0f;
 		Debug.Log("Audio is now lost.");
+	}
+
+	public void CollectAt (Vector3 at) {
+		srcCollectable.transform.position = at;
+		srcCollectable.PlayOneShot(sndCollect);
 	}
 }
