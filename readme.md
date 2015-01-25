@@ -9,9 +9,9 @@ A game developed during the Global Game Jam 2015 at the Breda jam site.
 
 Authors
 -------
-Artwork: Hans Crefcoeur and Derk Over 
-Audio: Maarten Crefcoeur 
-Code: Ruud van Asseldonk 
+Artwork: Hans Crefcoeur and Derk Over  
+Audio: Maarten Crefcoeur  
+Code: Ruud van Asseldonk  
 With voice acting by Evelien Mattheij, Brenden Gibbons, and Nikki Slug
 
 Licence
@@ -19,3 +19,9 @@ Licence
 As imposed by the GGJ rules, the game is licensed under the [Creative Commons Attribution NonCommercial ShareAlike licence][by-nc-sa].
 
 [by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+Disclaimer
+----------
+This game has been developed in 48 hours.
+Sleep deprivation and coffee abuse might have left their traces.
+Inspecting the sources is at your own risk.
