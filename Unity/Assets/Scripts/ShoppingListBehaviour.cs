@@ -80,7 +80,7 @@ public class ShoppingListBehaviour : MonoBehaviour {
 		case Collectable.Cucumbers: return listCucumbersCheckSprite;
 		case Collectable.Eggs: return listEggsCheckSprite;
 		case Collectable.Grapes: return listGrapesCheckSprite;
-		case Collectable.Ham: return listHamSprite;
+		case Collectable.Ham: return listHamCheckSprite;
 		case Collectable.Milk: return listMilkCheckSprite;
 		case Collectable.Peppers: return listPeppersCheckSprite;
 		case Collectable.Sausages: return listSausagesCheckSprite;
