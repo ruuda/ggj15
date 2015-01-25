@@ -3,7 +3,7 @@
 [ ] Child stay at candy?
 [ ] Play sound effects and music
 [ ] Player settings product name
-[ ] Particles should be flowers!
+[ ] Particles should be flat shaded stars.
 [x] Time limit
 
 Nice-to-haves
