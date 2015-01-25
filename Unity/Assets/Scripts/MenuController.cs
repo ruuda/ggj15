@@ -20,6 +20,7 @@ public class MenuController : MonoBehaviour {
 		controlsGroup = controlsPanel.GetComponent<CanvasGroup>();
 		controlsGroup.alpha = 0.0f;
 		controlsPanel.SetActive(false);
+		initialGroup = initialPanel.GetComponent<CanvasGroup>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +33,7 @@ public class MenuController : MonoBehaviour {
 			}
 
 			controlsGroup.alpha = Mathf.SmoothStep(0.0f, 1.0f, t);
+			initialGroup.alpha = 1.0f - controlsGroup.alpha;
 		}
 	}
 
