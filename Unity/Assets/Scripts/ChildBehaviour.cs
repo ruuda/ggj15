@@ -16,6 +16,7 @@ public class ChildBehaviour : MonoBehaviour {
 	public bool isCrying { get; private set; }
 	private GameObject player;
 	private int comfort;
+	private int stepsWandering;
 	private Queue<Movement> movements = new Queue<Movement>();
 	private float movementT;
 
@@ -160,7 +161,15 @@ public class ChildBehaviour : MonoBehaviour {
 
 			if (comfort <= cryAt) {
 				OnCrying();
+
 				return;
+			}
+		} else {
+			stepsWandering++;
+			
+			if (stepsWandering % 8 == 6) {
+				audioController.ChildWandering();
+				Debug.Log ("Playing child wandering sound.");
 			}
 		}
 	}
@@ -182,6 +191,11 @@ public class ChildBehaviour : MonoBehaviour {
 
 		audioController.SetSad();
 
+		// Every 5 sad steps, play child sad sound.
+		if ((comfort - cryAt) % 5 == 0) {
+			audioController.ChildSad();
+		}
+
 		// TODO: effects and the like, feeback
 	}
 
@@ -190,18 +204,23 @@ public class ChildBehaviour : MonoBehaviour {
 		comfort = initialComfort;
 		isCrying = false;
 		audioController.SetHappy();
+		audioController.CollectCandy();
 	}
 	
 	private void OnLeaving () {
-		Debug.Log("Child ran away!");
 		// TODO: effects and the like, feedback
 
 		isFollowing = false;
 		isCrying = false;
+
+		if (comfort == runAwayAt) {
+			audioController.ChildLeave();
+			stepsWandering = 0;
+			Debug.Log("Child ran away!");
+		}
 		
 		exitGate.SetFollowing(false);
 		audioController.SetLost();
-		// TODO: one-shot runaway sound
 	}
 
 	private void OnJoining () {
