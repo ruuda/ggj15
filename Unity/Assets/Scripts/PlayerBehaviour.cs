@@ -134,8 +134,12 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (movement.kind == MovementKind.Move) {
 			this.transform.position = movement.fromPos * (1.0f - t) + movement.toPos * t;
 
-			if (t < 1.0f) animation.Play("Walk");
+			if (t < 1.0f) {
+				animation.Play("Walk");
+				child.animation.Play("Walk");
+			}
 			animation["Walk"].speed = animation["Walk"].clip.length / movement.duration;
+			child.animation["Walk"].speed = animation["Walk"].clip.length / movement.duration;
 		}
 
 		if (movement.kind == MovementKind.Rotate) {

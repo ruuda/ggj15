@@ -74,18 +74,20 @@ public class ChildBehaviour : MonoBehaviour {
 			MoveCompleted(movement);
 		}
 		
-		// Ease / smooph step.
-		t = Mathf.SmoothStep(0.0f, 1.0f, t);
-		
 		if (movement.kind == MovementKind.Move) {
 			// Move to the destination, but if we should follow the player whilst still in a movement,
 			// then move towards the player instead.
 			var to = isFollowing ? player.transform.position : movement.toPos;
 			this.transform.position = movement.fromPos * (1.0f - t) + to * t;
+
+			if (t < 1.0f) {
+				animation.Play("Walk");
+			}
+			animation["Walk"].speed = animation["Walk"].clip.length / movement.duration;
 		}
 		
 		if (movement.kind == MovementKind.Rotate) {
-			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, t);
+			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, Mathf.SmoothStep(0.0f, 1.0f, t));
 		}
 	}
 

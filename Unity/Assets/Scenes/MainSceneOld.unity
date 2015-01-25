@@ -3185,6 +3185,10 @@ Prefab:
       propertyPath: particleController
       value: 
       objectReference: {fileID: 81610849}
+    - target: {fileID: 11139948, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b760224c881d3b41a789d9fc686f8f9, type: 2}
   m_RootGameObject: {fileID: 1161862526}
@@ -4639,7 +4643,7 @@ Animation:
   m_GameObject: {fileID: 1161862526}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1, type: 3}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1, type: 3}
   - {fileID: 7400002, guid: 9a9779c53d9f9134bb5ab8dc7d4ce7d1, type: 3}
