@@ -28,6 +28,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Update () {
 		if (movements.Count == 0) {
 			HandleInput();
+			RestoreAnimation();
 		} else {
 			HandleMove();
 		}
@@ -121,9 +122,6 @@ public class PlayerBehaviour : MonoBehaviour {
 	private void HandleMove () {
 		var movement = this.movements.Peek();
 
-		animation["Walk"].speed = animation["Walk"].clip.length / movement.duration;
-		animation.Play("Walk");
-
 		this.movementT += Time.deltaTime ;
 		var t = this.movementT / movement.duration;
 
@@ -133,11 +131,13 @@ public class PlayerBehaviour : MonoBehaviour {
 			t = 1.0f;
 			this.movements.Dequeue();
 			MoveCompleted(movement);
-			animation.Stop();
 		}
 
 		if (movement.kind == MovementKind.Move) {
 			this.transform.position = movement.fromPos * (1.0f - t) + movement.toPos * t;
+
+			if (t < 1.0f) animation.Play("Walk");
+			animation["Walk"].speed = animation["Walk"].clip.length / movement.duration;
 		}
 
 		if (movement.kind == MovementKind.Rotate) {
@@ -145,6 +145,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
+	private void RestoreAnimation () {
+		// TODO: Should mix with Idle animation state.
+		animation["Walk"].weight -= animation["Walk"].weight * Time.deltaTime;
+	}
+	
 	private void MoveCompleted (Movement movement) {
 		// Walking dicomforts the child.
 		if (movement.kind == MovementKind.Move) {

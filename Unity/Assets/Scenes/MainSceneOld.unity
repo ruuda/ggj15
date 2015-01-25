@@ -2609,7 +2609,7 @@ Prefab:
     - target: {fileID: 11123384, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: 7400000, guid: d5ec449226736664e8dadda8a417c282, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11123384, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
       propertyPath: m_PlayAutomatically
       value: 0
@@ -2622,6 +2622,10 @@ Prefab:
       propertyPath: exitGate
       value: 
       objectReference: {fileID: 1310734336}
+    - target: {fileID: 11123384, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: d5ec449226736664e8dadda8a417c282, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbae51c5c3a4cb4a949a321d472385f, type: 2}
   m_RootGameObject: {fileID: 1906698998}
@@ -5949,11 +5953,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1906698999}
+  - 111: {fileID: 1906699005}
+  - 136: {fileID: 1906699000}
+  - 54: {fileID: 1906699001}
   - 114: {fileID: 1906699003}
   - 114: {fileID: 1906699002}
-  - 54: {fileID: 1906699001}
-  - 136: {fileID: 1906699000}
-  - 111: {fileID: 1906699005}
   m_Layer: 0
   m_Name: Mother
   m_TagString: Player
@@ -6080,7 +6084,7 @@ Animation:
   m_GameObject: {fileID: 1906698998}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d5ec449226736664e8dadda8a417c282, type: 3}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: d5ec449226736664e8dadda8a417c282, type: 3}
   m_WrapMode: 0

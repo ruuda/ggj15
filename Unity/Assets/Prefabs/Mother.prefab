@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418946}
+  - 111: {fileID: 11123384}
+  - 136: {fileID: 13618964}
+  - 54: {fileID: 5418964}
   - 114: {fileID: 11418962}
   - 114: {fileID: 11418964}
-  - 54: {fileID: 5418964}
-  - 136: {fileID: 13618964}
-  - 111: {fileID: 11123384}
   m_Layer: 0
   m_Name: Mother
   m_TagString: Player
