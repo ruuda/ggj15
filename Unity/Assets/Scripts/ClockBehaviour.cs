@@ -45,6 +45,7 @@ public class ClockBehaviour : MonoBehaviour {
 
 	public void Retry () {
 		Debug.Log("Should retry.");
+		Application.LoadLevel("Menu");
 	}
 
 	public void SetWin () {
