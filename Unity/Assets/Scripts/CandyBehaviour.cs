@@ -15,7 +15,7 @@ public class CandyBehaviour : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.tag == "Child") {
-			other.gameObject.GetComponent<ChildBehaviour>().GiveCandy();
+			other.gameObject.GetComponent<ChildBehaviour>().GiveCandy(this.transform.position);
 		}
 	}
 }

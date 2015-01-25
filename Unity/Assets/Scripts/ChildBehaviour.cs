@@ -11,6 +11,7 @@ public class ChildBehaviour : MonoBehaviour {
 	public float turnTime = 0.15f;
 	public ExitGateBehaviour exitGate;
 	public AudioController audioController;
+	public ParticleController particleController;
 
 	private bool isFollowing = true;
 	public bool isCrying { get; private set; }
@@ -174,10 +175,11 @@ public class ChildBehaviour : MonoBehaviour {
 		}
 	}
 
-	public void GiveCandy () {
+	public void GiveCandy (Vector3 at) {
 		// If we were following, collecting candy resets the comfort to the initial value.
 		if (isFollowing) {
 			OnHappy();
+			particleController.Burst(at);
 		} else {
 			// Otherwise, the child may stop running away and begin eating candy?
 			// Maybe with a certain probability?

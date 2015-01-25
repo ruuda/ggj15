@@ -761,10 +761,11 @@ MonoBehaviour:
   initialComfort: 12
   cryAt: 6
   runAwayAt: 0
-  moveTime: .400000006
+  moveTime: .800000012
   turnTime: .150000006
   exitGate: {fileID: 0}
   audioController: {fileID: 0}
+  particleController: {fileID: 0}
 --- !u!136 &13640268
 CapsuleCollider:
   m_ObjectHideFlags: 1
