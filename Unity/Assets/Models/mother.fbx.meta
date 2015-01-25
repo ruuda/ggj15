@@ -13,6 +13,40 @@ ModelImporter:
     100014: MotherHead
     100016: MotherLeg_R
     100018: MotherLeg_R1
+    100020: Mother:Dress
+    100022: Mother:Flower
+    100024: Mother:globalMove
+    100026: Mother:Hair
+    100028: Mother:Head
+    100030: Mother:jntBn_Head
+    100032: Mother:jntBn_L_Ankle
+    100034: Mother:jntBn_L_Ball
+    100036: Mother:jntBn_L_Clavicle
+    100038: Mother:jntBn_L_Elbow
+    100040: Mother:jntBn_L_Hip
+    100042: Mother:jntBn_L_Knee
+    100044: Mother:jntBn_L_Shoulder
+    100046: Mother:jntBn_L_Wrist
+    100048: Mother:jntBn_Neck
+    100050: Mother:jntBn_R_Ankle
+    100052: Mother:jntBn_R_Ball
+    100054: Mother:jntBn_R_Clavicle
+    100056: Mother:jntBn_R_Elbow
+    100058: Mother:jntBn_R_Hip
+    100060: Mother:jntBn_R_Knee
+    100062: Mother:jntBn_R_Shoulder
+    100064: Mother:jntBn_R_Wrist
+    100066: Mother:jntDrv_Torso_1
+    100068: Mother:jntDrv_Torso_2
+    100070: Mother:jntDrv_Torso_3
+    100072: Mother:jntDrv_Torso_4
+    100074: Mother:joints
+    100076: Mother:jointsBn
+    100078: Mother:L_Arm
+    100080: Mother:L_Leg
+    100082: Mother:mesh
+    100084: Mother:R_Arm
+    100086: Mother:R_Leg
     400000: //RootNode
     400002: MotherArm_L
     400004: MotherArm_R
@@ -23,6 +57,40 @@ ModelImporter:
     400014: MotherHead
     400016: MotherLeg_R
     400018: MotherLeg_R1
+    400020: Mother:Dress
+    400022: Mother:Flower
+    400024: Mother:globalMove
+    400026: Mother:Hair
+    400028: Mother:Head
+    400030: Mother:jntBn_Head
+    400032: Mother:jntBn_L_Ankle
+    400034: Mother:jntBn_L_Ball
+    400036: Mother:jntBn_L_Clavicle
+    400038: Mother:jntBn_L_Elbow
+    400040: Mother:jntBn_L_Hip
+    400042: Mother:jntBn_L_Knee
+    400044: Mother:jntBn_L_Shoulder
+    400046: Mother:jntBn_L_Wrist
+    400048: Mother:jntBn_Neck
+    400050: Mother:jntBn_R_Ankle
+    400052: Mother:jntBn_R_Ball
+    400054: Mother:jntBn_R_Clavicle
+    400056: Mother:jntBn_R_Elbow
+    400058: Mother:jntBn_R_Hip
+    400060: Mother:jntBn_R_Knee
+    400062: Mother:jntBn_R_Shoulder
+    400064: Mother:jntBn_R_Wrist
+    400066: Mother:jntDrv_Torso_1
+    400068: Mother:jntDrv_Torso_2
+    400070: Mother:jntDrv_Torso_3
+    400072: Mother:jntDrv_Torso_4
+    400074: Mother:joints
+    400076: Mother:jointsBn
+    400078: Mother:L_Arm
+    400080: Mother:L_Leg
+    400082: Mother:mesh
+    400084: Mother:R_Arm
+    400086: Mother:R_Leg
     2300000: MotherArm_L
     2300002: MotherArm_R
     2300004: MotherDress
@@ -50,7 +118,25 @@ ModelImporter:
     4300012: MotherArm_R
     4300014: MotherLeg_R1
     4300016: MotherFlower1
+    4300018: Mother:Hair
+    4300020: Mother:Head
+    4300022: Mother:Dress
+    4300024: Mother:Flower
+    4300026: Mother:R_Leg
+    4300028: Mother:L_Leg
+    4300030: Mother:R_Arm
+    4300032: Mother:L_Arm
+    7400000: Walk
     9500000: //RootNode
+    11100000: //RootNode
+    13700000: Mother:Dress
+    13700002: Mother:Flower
+    13700004: Mother:Hair
+    13700006: Mother:Head
+    13700008: Mother:L_Arm
+    13700010: Mother:L_Leg
+    13700012: Mother:R_Arm
+    13700014: Mother:R_Leg
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,7 +152,103 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mother:globalMove
+        weight: 1
+      - path: Mother:globalMove/Mother:joints
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip/Mother:jntBn_L_Knee
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip/Mother:jntBn_L_Knee/Mother:jntBn_L_Ankle
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_L_Hip/Mother:jntBn_L_Knee/Mother:jntBn_L_Ankle/Mother:jntBn_L_Ball
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip/Mother:jntBn_R_Knee
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip/Mother:jntBn_R_Knee/Mother:jntBn_R_Ankle
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntBn_R_Hip/Mother:jntBn_R_Knee/Mother:jntBn_R_Ankle/Mother:jntBn_R_Ball
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle/Mother:jntBn_L_Shoulder
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle/Mother:jntBn_L_Shoulder/Mother:jntBn_L_Elbow
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_L_Clavicle/Mother:jntBn_L_Shoulder/Mother:jntBn_L_Elbow/Mother:jntBn_L_Wrist
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_Neck
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_Neck/Mother:jntBn_Head
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle/Mother:jntBn_R_Shoulder
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle/Mother:jntBn_R_Shoulder/Mother:jntBn_R_Elbow
+        weight: 1
+      - path: Mother:globalMove/Mother:joints/Mother:jointsBn/Mother:jntDrv_Torso_1/Mother:jntDrv_Torso_2/Mother:jntDrv_Torso_3/Mother:jntDrv_Torso_4/Mother:jntBn_R_Clavicle/Mother:jntBn_R_Shoulder/Mother:jntBn_R_Elbow/Mother:jntBn_R_Wrist
+        weight: 1
+      - path: Mother:mesh
+        weight: 1
+      - path: Mother:mesh/Mother:Dress
+        weight: 1
+      - path: Mother:mesh/Mother:Flower
+        weight: 1
+      - path: Mother:mesh/Mother:Hair
+        weight: 1
+      - path: Mother:mesh/Mother:Head
+        weight: 1
+      - path: Mother:mesh/Mother:L_Arm
+        weight: 1
+      - path: Mother:mesh/Mother:L_Leg
+        weight: 1
+      - path: Mother:mesh/Mother:R_Arm
+        weight: 1
+      - path: Mother:mesh/Mother:R_Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -102,6 +284,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 

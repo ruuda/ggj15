@@ -120,6 +120,10 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	private void HandleMove () {
 		var movement = this.movements.Peek();
+
+		animation["Walk"].speed = animation["Walk"].clip.length / movement.duration;
+		animation.Play("Walk");
+
 		this.movementT += Time.deltaTime ;
 		var t = this.movementT / movement.duration;
 
@@ -129,17 +133,15 @@ public class PlayerBehaviour : MonoBehaviour {
 			t = 1.0f;
 			this.movements.Dequeue();
 			MoveCompleted(movement);
+			animation.Stop();
 		}
-
-		// Ease / smooph step.
-		t = Mathf.SmoothStep(0.0f, 1.0f, t);
 
 		if (movement.kind == MovementKind.Move) {
 			this.transform.position = movement.fromPos * (1.0f - t) + movement.toPos * t;
 		}
 
 		if (movement.kind == MovementKind.Rotate) {
-			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, t);
+			this.transform.rotation = Quaternion.Lerp(movement.fromRot, movement.toRot, Mathf.SmoothStep(0.0f, 1.0f, t));
 		}
 	}
 
