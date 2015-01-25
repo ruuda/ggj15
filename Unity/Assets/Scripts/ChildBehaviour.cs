@@ -232,6 +232,6 @@ public class ChildBehaviour : MonoBehaviour {
 		
 		exitGate.SetFollowing(true);
 		audioController.SetSad();
-		// TODO: one-shot join sound.
+		audioController.Join();
 	}
 }

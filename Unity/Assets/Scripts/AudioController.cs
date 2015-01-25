@@ -15,6 +15,7 @@ public class AudioController : MonoBehaviour {
 	public AudioClip[] sndChildSad;
 	public AudioClip[] sndChildLeave;
 	public AudioClip[] sndChildWandering;
+	public AudioClip[] sndJoin;
 
 	private float musicState = 1.0f; // 1.0 = happy, 0.0 = sad, -1.0 = lost.
 	private float desiredState = 1.0f;
@@ -91,5 +92,10 @@ public class AudioController : MonoBehaviour {
 		if (!srcChild.isPlaying) {
 			srcChild.PlayOneShot(RandomClip(this.sndChildWandering));
 		}
+	}
+
+	public void Join () {
+		srcMother.Stop();
+		srcMother.PlayOneShot(RandomClip(this.sndJoin));
 	}
 }
