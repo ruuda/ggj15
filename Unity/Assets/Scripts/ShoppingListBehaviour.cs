@@ -13,21 +13,29 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	public GameObject pointerPrefab;
 	public ExitGateBehaviour exitGate;
 
+	public Sprite listApplesSprite;
+	public Sprite listBananasSprite;
+	public Sprite listCheeseSprite;
+	public Sprite listCucumbersSprite;
+	public Sprite listEggsSprite;
+	public Sprite listGrapesSprite;
+	public Sprite listHamSprite;
+	public Sprite listMilkSprite;
+	public Sprite listPeppersSprite;
+	public Sprite listSausagesSprite;
+
+	public Sprite listApplesCheckSprite;
+	public Sprite listBananasCheckSprite;
+	public Sprite listCheeseCheckSprite;
+	public Sprite listCucumbersCheckSprite;
+	public Sprite listEggsCheckSprite;
+	public Sprite listGrapesCheckSprite;
+	public Sprite listHamCheckSprite;
+	public Sprite listMilkCheckSprite;
+	public Sprite listPeppersCheckSprite;
+	public Sprite listSausagesCheckSprite;
+
 	public Sprite listTopSprite;
-	public Sprite bananasSprite;
-	public Sprite bananasCheckSprite;
-	public Sprite strawberriesSprite;
-	public Sprite strawberriesCheckSprite;
-	public Sprite crispsSprite;
-	public Sprite crispsCheckSprite;
-	public Sprite milkSprite;
-	public Sprite milkCheckSprite;
-	public Sprite potatoesSprite;
-	public Sprite potatoesCheckSprite;
-	public Sprite kiwisSprite;
-	public Sprite kiwisCheckSprite;
-	public Sprite lemonsSprite;
-	public Sprite lemonsCheckSprite;
 	public Sprite listBottomSprite;
 
 	private List<Collectable> collectables = new List<Collectable>();
@@ -46,26 +54,32 @@ public class ShoppingListBehaviour : MonoBehaviour {
 
 	private Sprite CollectableToSprite (Collectable collectable) {
 		switch (collectable) {
-		case Collectable.Bananas: return bananasSprite;
-		case Collectable.Strawberries: return strawberriesSprite;
-		case Collectable.Crisps: return crispsSprite;
-		case Collectable.Kiwis: return kiwisSprite;
-		case Collectable.Lemons: return lemonsSprite;
-		case Collectable.Milk: return milkSprite;
-		case Collectable.Potatoes: return potatoesSprite;
+		case Collectable.Apples: return listApplesSprite;
+		case Collectable.Bananas: return listBananasSprite;
+		case Collectable.Cheese: return listCheeseSprite;
+		case Collectable.Cucumbers: return listCucumbersSprite;
+		case Collectable.Eggs: return listEggsSprite;
+		case Collectable.Grapes: return listGrapesSprite;
+		case Collectable.Ham: return listHamSprite;
+		case Collectable.Milk: return listMilkSprite;
+		case Collectable.Peppers: return listPeppersSprite;
+		case Collectable.Sausages: return listSausagesSprite;
 		}
 		throw new System.ArgumentException("collectable");
 	}
 
 	private Sprite CollectableToCheckSprite (Collectable collectable) {
 		switch (collectable) {
-		case Collectable.Bananas: return bananasCheckSprite;
-		case Collectable.Strawberries: return strawberriesCheckSprite;
-		case Collectable.Crisps: return crispsCheckSprite;
-		case Collectable.Kiwis: return kiwisCheckSprite;
-		case Collectable.Lemons: return lemonsCheckSprite;
-		case Collectable.Milk: return milkCheckSprite;
-		case Collectable.Potatoes: return potatoesCheckSprite;
+		case Collectable.Apples: return listApplesCheckSprite;
+		case Collectable.Bananas: return listBananasCheckSprite;
+		case Collectable.Cheese: return listCheeseCheckSprite;
+		case Collectable.Cucumbers: return listCucumbersCheckSprite;
+		case Collectable.Eggs: return listEggsCheckSprite;
+		case Collectable.Grapes: return listGrapesCheckSprite;
+		case Collectable.Ham: return listHamSprite;
+		case Collectable.Milk: return listMilkCheckSprite;
+		case Collectable.Peppers: return listPeppersCheckSprite;
+		case Collectable.Sausages: return listSausagesCheckSprite;
 		}
 		throw new System.ArgumentException("collectable");
 	}
@@ -138,13 +152,16 @@ public class ShoppingListBehaviour : MonoBehaviour {
 }
 
 public enum Collectable {
+	Apples,
 	Bananas,
-	Strawberries,
-	Crisps,
+	Cheese,
+	Cucumbers,
+	Eggs,
+	Grapes,
+	Ham,
 	Milk,
-	Potatoes,
-	Kiwis,
-	Lemons
+	Peppers,
+	Sausages
 }
 
 static class ListExtensions {
