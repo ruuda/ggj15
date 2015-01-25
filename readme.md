@@ -1,5 +1,5 @@
-Ritchy’s Groceries
-==================
+Richy’s Groceries
+=================
 
 A game developed during the Global Game Jam 2015 at the Breda jam site.
 
