@@ -1,13 +1,5 @@
-[ ] Menu
-[x] Scrap items from list properly
-[ ] Child stay at candy?
-[ ] Play sound effects and music
-[ ] Player settings product name
-[ ] Particles should be flat shaded stars.
-[x] Time limit
-
-Nice-to-haves
--------------
-
-[ ] Procedural levels
-[x] Android support
+- Fix character skinning
+- Enable idle animation
+- Replace logo
+- Use different arrows for candy / items
+- Clearly indicate the grid / where to walk
