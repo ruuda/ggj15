@@ -10,7 +10,7 @@ public class PointerBehaviour : MonoBehaviour {
 	public float amplitude = 0.1f;
 	public float rotationSpeed = 40.0f;
 	public float hoverSpeed = 2.5f;
-
+	
 	bool isCollected = false;
 
 	// Use this for initialization
@@ -25,7 +25,7 @@ public class PointerBehaviour : MonoBehaviour {
 		float sqrPlayer = (GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).sqrMagnitude;
 		float extraHeight = Mathf.Clamp01(sqrPlayer / 25.0f) * 1.5f;
 
-		this.transform.Rotate(Vector3.up, Time.deltaTime * rotationSpeed);
+		this.transform.Rotate(Vector3.up, Time.deltaTime * rotationSpeed, Space.World);
 		this.transform.position = initialPosition + new Vector3(0.0f, Mathf.Cos(angle) * amplitude + extraHeight, 0.0f);
 
 		if (isCollected) {

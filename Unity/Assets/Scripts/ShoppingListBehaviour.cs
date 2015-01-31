@@ -159,7 +159,8 @@ public class ShoppingListBehaviour : MonoBehaviour {
 	}
 
 	public void SpawnCandyPrefabAt (Vector3 at) {
-		GameObject.Instantiate(candyPointerPrefab, at + Vector3.up, Quaternion.identity);
+		var pointer = GameObject.Instantiate(candyPointerPrefab, at + Vector3.up, Quaternion.identity) as GameObject;
+		pointer.transform.Rotate(Vector3.forward, -90.0f);
 	}
 }
 
