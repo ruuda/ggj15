@@ -34,18 +34,17 @@
 			struct fragIn
 			{
 			    float4 pos   : SV_POSITION;
-			    float  depth : COLOR0;
+			    float2 depth : COLOR0;
 			    float4 uv    : TEXCOORD0;
-			    float4 wpos  : TEXCOORD1;
 			};
 
 			fragIn vert(vertIn i)
 			{
 			    fragIn o;
-			    o.pos   = mul(UNITY_MATRIX_MVP, i.pos);
-			    o.wpos  = mul(_Object2World, i.pos);
-			    o.uv    = i.uv; 
-			    o.depth = o.pos.z / fogDistance;
+			    o.pos     = mul(UNITY_MATRIX_MVP, i.pos);
+			    o.uv      = i.uv;
+			    o.depth.x = o.pos.z / fogDistance;
+			    o.depth.y = mul(_Object2World, i.pos).y;
 			    return o;
 			}
 			
@@ -58,8 +57,8 @@
 			float4 frag(fragIn i) : COLOR
 			{  
 				const float4 channels = tex2D(base, i.uv.xy);
-				const float4 f = mix(fogColourLow, fogColourHigh, 1.0 - exp(-i.wpos.y / fogHeight));
-				const float4 withFog = mix(channels, f, (1.0 - exp(-i.depth)) * f.a);
+				const float4 f = mix(fogColourLow, fogColourHigh, 1.0 - exp(-i.depth.y / fogHeight));
+				const float4 withFog = mix(channels, f, (1.0 - exp(-i.depth.x)) * f.a);
 				if (channels.a < 0.8) discard;
 				return float4(withFog.rgb, 1.0f);
 			}
